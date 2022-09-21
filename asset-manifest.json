@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a52d3dc.css",
+    "main.js": "/static/js/main.59a1e9b0.js",
+    "static/js/27.1712921c.chunk.js": "/static/js/27.1712921c.chunk.js",
+    "static/media/video.mp4": "/static/media/video.d225edd6d7d4d4a8f5b7.mp4",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "static/media/ApurbaAdhikary0243.pdf": "/static/media/ApurbaAdhikary0243.a22e47288c84bfa80fa0.pdf",
+    "static/media/fontawesome-webfont.eot": "/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
+    "static/media/fontawesome-webfont.ttf?v=4.7.0": "/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
+    "static/media/404.jpg": "/static/media/404.19e523cdb4d4a12db938.jpg",
+    "static/media/fontawesome-webfont.woff?v=4.7.0": "/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
+    "static/media/meanbuy.png": "/static/media/meanbuy.a5090eae545c888a5e0f.png",
+    "static/media/fontawesome-webfont.woff2?v=4.7.0": "/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
+    "static/media/fabbag.jpeg": "/static/media/fabbag.f245dda349f4664e645a.jpeg",
+    "static/media/ApurbaAdhikary.webp": "/static/media/ApurbaAdhikary.b58e9775058f314daf8b.webp",
+    "static/media/glass.jpeg": "/static/media/glass.dd0200ba595d24cb8822.jpeg",
+    "static/media/ApurbaAdhikaryMob.webp": "/static/media/ApurbaAdhikaryMob.42d0028525d847024789.webp",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/cancel.svg": "/static/media/cancel.17825c74c3c6b6934429010ee3f913fd.svg",
+    "static/media/quote.svg": "/static/media/quote.6b6d47557f1672a2ce0f199a1bd468dc.svg",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.9a52d3dc.css",
+    "static/js/main.59a1e9b0.js"
+  ]
+}
