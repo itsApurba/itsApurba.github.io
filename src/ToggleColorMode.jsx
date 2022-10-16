@@ -1,8 +1,10 @@
 import { IconButton } from "@chakra-ui/button";
 import { useColorMode, useColorModeValue } from "@chakra-ui/color-mode";
 import { Tooltip } from "@chakra-ui/tooltip";
+import { motion } from "framer-motion";
 import React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { animationRev } from "./styles/animation";
 
 const ToggleColorMode = ({ props }) => {
   const colorModeValue = useColorModeValue("dark", "light");
@@ -19,6 +21,8 @@ const ToggleColorMode = ({ props }) => {
     <div>
       <Tooltip label={colorModeValue === "dark" ? "Dark Mode" : "Light Mode"}>
         <IconButton
+          as={motion.div}
+          animation={animationRev}
           icon={<SwitchIcon />}
           onClick={handleClick}
           aria-label={`Switch to ${colorModeValue} mode`}

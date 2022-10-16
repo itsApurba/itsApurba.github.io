@@ -1,12 +1,16 @@
 import { Avatar } from "@chakra-ui/avatar";
 import { useDisclosure } from "@chakra-ui/hooks";
-import { Box, Flex, HStack, Link } from "@chakra-ui/layout";
+import { Box, Flex, HStack, Link, Stack } from "@chakra-ui/layout";
 import React from "react";
 import Navlinks from "./Navlinks";
 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import { IconButton } from "@chakra-ui/button";
+import ToggleColorMode from "../ToggleColorMode";
+import { keyframes, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { animation } from "../styles/animation";
 
 const links = [
   { name: "About Me", path: "#about" },
@@ -17,18 +21,32 @@ const links = [
 
 const HeaderNav = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const color = useColorMode();
+  const colorValue = useColorModeValue("white", "gray.700");
+  // console.log(colorValue);
 
   return (
-    <Box pos={"sticky"} px={4} boxShadow={"lg"}>
+    <Box
+      // as={motion.div}
+      // animation={animation}
+      pos={"sticky"}
+      top={"0"}
+      zIndex={2}
+      px={4}
+      boxShadow={"lg"}
+      bg={colorValue}
+    >
       <Flex
         h={"14"}
         align={"center"}
-        justify={"center"}
+        justify={"space-between"}
         w={["90%", "85%", "80%"]}
         maxW={900}
         mx='auto'
       >
         <IconButton
+          as={motion.div}
+          animation={animation}
           size={"md"}
           icon={isOpen ? <AiOutlineClose /> : <GiHamburgerMenu />}
           aria-label={"Open Menu"}
@@ -36,7 +54,26 @@ const HeaderNav = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} align={"center"}>
-          <Box>
+          <Box
+            className='looooo'
+            as={motion.div}
+            animation={animation}
+
+            // initial={{
+            //   x: -500,
+            //   opacity: 0,
+            //   scale: 0.5,
+            // }}
+            // animate={{
+            //   x: 0,
+            //   opacity: 1,
+            //   scale: 1,
+            // }}
+            // transition={{
+            //   duration: 2,
+            //   iterationCount: "infinite",
+            // }}
+          >
             <Avatar
               as={Link}
               size={"sm"}
@@ -46,13 +83,51 @@ const HeaderNav = () => {
             />
           </Box>
 
-          <HStack as={"nav"} spacing={4} display={{ base: "none", md: "flex" }}>
+          <HStack
+            as={motion.div}
+            animation={animation}
+            // initial={{
+            //   x: -500,
+            //   opacity: 0,
+            //   scale: 0.5,
+            // }}
+            // animate={{
+            //   x: 0,
+            //   opacity: 1,
+            //   scale: 1,
+            // }}
+            // transition={{
+            //   duration: 1.5,
+            // }}
+            spacing={4}
+            display={{ base: "none", md: "flex" }}
+          >
             {links.map((item, index) => (
               <Navlinks key={index} name={item.name} path={item.path} />
             ))}
           </HStack>
         </HStack>
+        <ToggleColorMode />
       </Flex>
+      {isOpen && (
+        <Box
+          pb={4}
+          w={["100%", "100%", "80%"]}
+          maxW={800}
+          display={["inherit", "inherit", "none"]}
+        >
+          <Stack as={"nav"} spacing={4}>
+            {links.map((link, index) => (
+              <Navlinks
+                index={index}
+                name={link.name}
+                path={link.path}
+                onClose={onClose}
+              />
+            ))}
+          </Stack>
+        </Box>
+      )}
     </Box>
   );
 };
