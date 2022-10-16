@@ -1,4 +1,4 @@
-html {
+* {
   scroll-behavior: smooth;
 }
 html,
@@ -9,7 +9,7 @@ body {
 section {
   height: 100vh;
   scroll-snap-align: center;
-  position: relative;
+  /* position: relative; */
 }
 *::-webkit-scrollbar {
   display: none;

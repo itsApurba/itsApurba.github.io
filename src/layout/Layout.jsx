@@ -16,14 +16,13 @@ const Layout = () => {
         display={"block"}
         overflowY='scroll'
         scrollSnapType='y mandatory'
-        scrollbarWidth='none'
         // position='relative'
         // zIndex='docked'
       >
         <About />
-        <Contact />
-        <Projects />
         <Skills />
+        <Projects />
+        <Contact />
         {/* <Box
           rounded='md'
           shadow='lg'
