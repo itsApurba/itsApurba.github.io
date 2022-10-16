@@ -54,51 +54,20 @@ const HeaderNav = () => {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack spacing={8} align={"center"}>
-          <Box
-            className='looooo'
-            as={motion.div}
-            animation={animation}
-
-            // initial={{
-            //   x: -500,
-            //   opacity: 0,
-            //   scale: 0.5,
-            // }}
-            // animate={{
-            //   x: 0,
-            //   opacity: 1,
-            //   scale: 1,
-            // }}
-            // transition={{
-            //   duration: 2,
-            //   iterationCount: "infinite",
-            // }}
-          >
+          <Box className='looooo' as={motion.div} animation={animation}>
             <Avatar
               as={Link}
               size={"sm"}
               href={"#projects"}
               //   src={UserIcon}
-              src={"https://avatars2.githubusercontent.com/u/37842853?v=4"}
+              // src={"https://avatars2.githubusercontent.com/u/37842853?v=4"}
+              src={"https://avatars.githubusercontent.com/u/25547103"}
             />
           </Box>
 
           <HStack
             as={motion.div}
             animation={animation}
-            // initial={{
-            //   x: -500,
-            //   opacity: 0,
-            //   scale: 0.5,
-            // }}
-            // animate={{
-            //   x: 0,
-            //   opacity: 1,
-            //   scale: 1,
-            // }}
-            // transition={{
-            //   duration: 1.5,
-            // }}
             spacing={4}
             display={{ base: "none", md: "flex" }}
           >
