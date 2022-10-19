@@ -9,7 +9,6 @@ import Skills from "../components/Skills";
 const Layout = () => {
   return (
     <div>
-      <HeaderNav />
       <VStack
         w='full'
         h='100vh'
@@ -19,6 +18,7 @@ const Layout = () => {
         // position='relative'
         // zIndex='docked'
       >
+        <HeaderNav />
         <About />
         <Skills />
         <Projects />

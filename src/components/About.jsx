@@ -34,12 +34,7 @@ const About = () => {
               </Heading>
             </Box>
             <VStack align={"flex-start"}>
-              <Container>
-                There are many benefits to a joint design and development
-                system. Not only does it bring benefits to the design team, but
-                it also brings benefits to engineering teams. It makes sure that
-                our experiences have a
-              </Container>
+              <Container>I am Apurba Adhikary</Container>
               <ButtonGroup pt={3} pl={4} isAttached={true} borderRadius={"md"}>
                 <Button bg={"green.300"}>Resume</Button>
               </ButtonGroup>
