@@ -4,7 +4,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import HeaderNav from "../components/HeaderNav";
 import Projects from "../components/Projects";
-import Skills from "../components/Skills";
+import Skills from "../components/skills/Skills";
 
 const Layout = () => {
   return (
@@ -20,7 +20,7 @@ const Layout = () => {
       >
         <HeaderNav />
         <About />
-        <Skills />
+        {/* <Skills /> */}
         <Projects />
         <Contact />
         {/* <Box

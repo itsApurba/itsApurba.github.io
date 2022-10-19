@@ -58,7 +58,7 @@ const HeaderNav = () => {
             <Avatar
               as={Link}
               size={"sm"}
-              href={"#projects"}
+              href={"#about"}
               //   src={UserIcon}
               // src={"https://avatars2.githubusercontent.com/u/37842853?v=4"}
               src={"https://avatars.githubusercontent.com/u/25547103"}
