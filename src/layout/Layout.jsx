@@ -20,7 +20,7 @@ const Layout = () => {
       >
         <HeaderNav />
         <About />
-        {/* <Skills /> */}
+        <Skills />
         <Projects />
         <Contact />
         {/* <Box
