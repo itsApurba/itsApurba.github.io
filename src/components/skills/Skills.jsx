@@ -125,7 +125,12 @@ const Skills = () => {
                 </HStack>
               </Tab>
             </TabList>
-            <TabPanels minHeight={"45vh"} maxHeight={"50vh"} overflow='scroll'>
+            <TabPanels
+              minHeight={"45vh"}
+              maxHeight={"50vh"}
+              overflow='scroll'
+              overflowX='hidden'
+            >
               <TabPanel px={0}>
                 <SimpleGrid columns={[1, 2]} spacing={4} mt={[1, 8]}>
                   {skillsList.map((tool, index) => (

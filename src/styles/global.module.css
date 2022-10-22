@@ -12,15 +12,24 @@ section {
   /* position: relative; */
   padding: 4%;
 }
-*::-webkit-scrollbar {
-  display: thin !important;
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
 }
-::-webkit-scrollbar-track {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(7, 0, 211, 1) 100%
-  );
+
+/* Track */
+/* ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+} */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(134, 134, 134);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(146, 146, 146);
 }
 
 * {
