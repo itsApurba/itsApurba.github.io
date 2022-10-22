@@ -13,10 +13,17 @@ section {
   padding: 4%;
 }
 *::-webkit-scrollbar {
-  display: none;
+  display: thin !important;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(7, 0, 211, 1) 100%
+  );
 }
 
 * {
-  scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important; /* IE and Edge */
+  scrollbar-width: thin !important; /* Firefox */
+  -ms-overflow-style: thin !important; /* IE and Edge */
 }

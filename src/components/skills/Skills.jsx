@@ -40,17 +40,15 @@ const Skills = () => {
     <section id='skills'>
       <Center h={"full"}>
         <VStack>
-          <VStack>
-            <Heading mt={0} mb={1}>
-              Tech Stack
-            </Heading>
+          <VStack mt={"16"}>
+            <Heading mt={0}>Skills</Heading>
             <Text
-              fontSize={"xl"}
+              fontSize={["md", "lg", "xl", "2xl"]}
               // color={useColorModeValue("gray.500", "gray.200")}
-              maxW='lg'
+              // maxW='lg'
               textAlign='center'
             >
-              A list of my technologies that I use on a regular basis.
+              A list of technologies that I use on a regular basis.
             </Text>
           </VStack>
           <Tabs
@@ -73,7 +71,7 @@ const Skills = () => {
               >
                 <HStack spacing={1}>
                   <Icon as={AiTwotoneThunderbolt} weight='fill' />
-                  <Text>All</Text>
+                  <Text fontSize={["sm", "md", "md", "lg"]}>All</Text>
                 </HStack>
               </Tab>
               <Tab
@@ -89,7 +87,9 @@ const Skills = () => {
               >
                 <HStack spacing={1}>
                   <Icon as={BiDesktop} weight='fill' />
-                  <Text>Web Development</Text>
+                  <Text fontSize={["sm", "md", "md", "lg"]}>
+                    Web Development
+                  </Text>
                 </HStack>
               </Tab>
               <Tab
@@ -105,7 +105,7 @@ const Skills = () => {
               >
                 <HStack spacing={1}>
                   <Icon as={GiSpiderWeb} weight='fill' />
-                  <Text>Web Design</Text>
+                  <Text fontSize={["sm", "md", "md", "lg"]}>Web Design</Text>
                 </HStack>
               </Tab>
               <Tab
@@ -121,13 +121,13 @@ const Skills = () => {
               >
                 <HStack spacing={1}>
                   <Icon as={AiOutlineCloudServer} weight='fill' />
-                  <Text>Devops</Text>
+                  <Text fontSize={["sm", "md", "md", "lg"]}>Devops</Text>
                 </HStack>
               </Tab>
             </TabList>
-            <TabPanels minHeight={"45vh"}>
+            <TabPanels minHeight={"45vh"} maxHeight={"50vh"} overflow='scroll'>
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 1, 2]} spacing={4} mt={8}>
+                <SimpleGrid columns={[1, 2]} spacing={4} mt={[1, 8]}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
@@ -141,7 +141,7 @@ const Skills = () => {
                 </SimpleGrid>
               </TabPanel>
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                <SimpleGrid columns={[1, 2]} spacing={4} mt={[2, 8]}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
@@ -154,8 +154,8 @@ const Skills = () => {
                   ))}
                 </SimpleGrid>
               </TabPanel>
-              <TabPanels px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+              <TabPanel px={0}>
+                <SimpleGrid columns={[1, 2]} spacing={4} mt={[2, 8]}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
@@ -167,9 +167,9 @@ const Skills = () => {
                     />
                   ))}
                 </SimpleGrid>
-              </TabPanels>
+              </TabPanel>
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={8}>
+                <SimpleGrid columns={[1, 2]} spacing={4} mt={[2, 8]}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
