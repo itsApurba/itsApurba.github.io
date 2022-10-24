@@ -31,14 +31,14 @@ export const skills = [
     image: typescript,
   },
   {
-    name: "Html5",
+    name: "HTML5",
     description: "Web layouts",
     link: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
     type: "development",
     image: html5,
   },
   {
-    name: "Css3",
+    name: "CSS3",
     description: "Web design",
     link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     type: "design",
@@ -78,5 +78,25 @@ export const skills = [
     link: "https://www.figma.com/",
     type: "design",
     image: figma,
+  },
+];
+
+export const projects = [
+  {
+    name: "TimeCamp Clone",
+    description:
+      "TimeCamp is a simple, yet feature-rich time tracking app to help you gain insights into your projects and tasks.",
+    technology: ["Javascript", "CSS3", "HTML"],
+    deployLink:
+      "https://6339252a627d9d1025202e2a--timecampclone-cw.netlify.app/",
+    githubLink: "https://github.com/itsApurba/Time-Camp-Clone",
+  },
+  {
+    name: "MeanBuy Clone",
+    description:
+      "MeanBuy is a platform for you to buy products instantly or on a monthly subscription basis.",
+    technology: ["Javascript", "CSS3", "HTML"],
+    deployLink: "https://itsmeanbuy.netlify.app/",
+    githubLink: "https://github.com/itsApurba/Meanbuy-Clone",
   },
 ];

@@ -3,7 +3,7 @@ import React from "react";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import HeaderNav from "../components/HeaderNav";
-import Projects from "../components/Projects";
+import Projects from "../components/projects/Projects";
 import Skills from "../components/skills/Skills";
 
 const Layout = () => {
