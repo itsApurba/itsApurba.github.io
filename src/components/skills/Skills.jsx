@@ -40,7 +40,7 @@ const Skills = () => {
     <section id='skills'>
       <Center h={"full"}>
         <VStack>
-          <VStack mt={"16"}>
+          <VStack mt={"10"}>
             <Heading mt={0}>Skills</Heading>
             <Text
               fontSize={["md", "lg", "xl", "2xl"]}
