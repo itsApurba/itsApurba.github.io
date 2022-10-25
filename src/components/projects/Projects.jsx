@@ -56,7 +56,7 @@ const Projects = () => {
   return (
     <section id='projects'>
       <Center h={"full"}>
-        <Box position={"relative"} w={"full"} mt={"10"} overflow={"hidden"}>
+        <Box position={"relative"} w={"4xl"} mt={"10"} overflow={"hidden"}>
           <VStack>
             <Heading>Projects</Heading>
             <Text></Text>

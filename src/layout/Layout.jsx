@@ -1,6 +1,7 @@
 import { Box, HStack, VStack } from "@chakra-ui/react";
 import React from "react";
 import About from "../components/About";
+import Activity from "../components/activity/Activity";
 import Contact from "../components/Contact";
 import HeaderNav from "../components/HeaderNav";
 import Projects from "../components/projects/Projects";
@@ -22,6 +23,7 @@ const Layout = () => {
         <About />
         <Skills />
         <Projects />
+        <Activity />
         <Contact />
         {/* <Box
           rounded='md'
