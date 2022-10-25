@@ -4,6 +4,7 @@ import {
   Button,
   ButtonGroup,
   Center,
+  Container,
   Heading,
   Image,
   Text,
@@ -19,84 +20,57 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 const Projects = () => {
-  // const settings = {
-  //   // dots: true,
-  //   arrows: true,
-  //   // fade: true,
-  //   infinite: true,
-  //   // autoplay: true,
-  //   speed: 500,
-  //   autoplaySpeed: 5000,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   responsive: [
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 770,
-  //       settings: {
-  //         slidesToShow: 2,
-  //       },
-  //     },
-  //     {
-  //       breakpoint: 480,
-  //       settings: {
-  //         slidesToShow: 1,
-  //       },
-  //     },
-  //   ],
-  // };
-  const image = `https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80`;
-  const image2 = `https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60`;
+  const settings = {
+    // dots: true,
+    arrows: false,
+    // fade: true,
+    infinite: true,
+    // autoplay: true,
+    speed: 500,
+    autoplaySpeed: 5000,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 770,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+  // const image = `https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80`;
+  // const image2 = `https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60`;
   return (
     <section id='projects'>
       <Center h={"full"}>
-        <VStack mt={"10"}>
+        <Box position={"relative"} w={"full"} mt={"10"} overflow={"hidden"}>
           <VStack>
             <Heading>Projects</Heading>
             <Text></Text>
           </VStack>
           {/* Project card */}
-
           {/* Project Cover Image - Project Title - Project Description - Tech Stacks used in the project are highlighted -Two buttons: GitHub, and Deployment/Video -Ensure that the cards are responsive on different screen sizes
           -Project Cards details are visible in the first go, need not on them to view them." 
           */}
-
-          <Box w={["100px", "lg", "2xl", "4xl"]}>
-            <Swiper
-              slidesPerView={3}
-              spaceBetween={30}
-              slidesPerGroup={3}
-              loop={true}
-              loopFillGroupWithBlank={true}
-              className='mySwiper'
-            >
-              <SwiperSlide>SADFASDF</SwiperSlide>
-              <SwiperSlide>Slide 2</SwiperSlide>
-              <SwiperSlide>Slide 3</SwiperSlide>
-              <SwiperSlide>Slide 4</SwiperSlide>
-              <SwiperSlide>Slide 5</SwiperSlide>
-              <SwiperSlide>Slide 6</SwiperSlide>
-              <SwiperSlide>Slide 7</SwiperSlide>
-              <SwiperSlide>Slide 8</SwiperSlide>
-              <SwiperSlide>Slide 9</SwiperSlide>
-            </Swiper>
-
-            {/* <Slider {...settings}> </Slider> */}
-            {/* {projects.map((project, id) => (
-              <ProjectsCard
-                key={id}
-                image={image}
-                image2={image2}
-                {...project}
-              />
-            ))} */}
-          </Box>
-        </VStack>
+          <Slider {...settings}>
+            {projects.map((project, id) => (
+              <ProjectsCard key={id} {...project} />
+            ))}
+          </Slider>
+        </Box>
       </Center>
     </section>
   );

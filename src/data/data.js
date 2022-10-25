@@ -7,6 +7,9 @@ import bootstrap from "../assets/images/skills/bootstrap.png";
 import heroku from "../assets/images/skills/heroku.png";
 import vscode from "../assets/images/skills/vscode.png";
 import figma from "../assets/images/skills/figma.png";
+import meanbuy from "../assets/images/projects/meanbuy1.png";
+import fabbag from "../assets/images/projects/fabbag1.png";
+import timecamp from "../assets/images/projects/timecamp1.png";
 
 export const skills = [
   {
@@ -83,20 +86,31 @@ export const skills = [
 
 export const projects = [
   {
-    name: "TimeCamp Clone",
+    name: "TimeCamp",
     description:
       "TimeCamp is a simple, yet feature-rich time tracking app to help you gain insights into your projects and tasks.",
     technology: ["Javascript", "CSS3", "HTML"],
     deployLink:
       "https://6339252a627d9d1025202e2a--timecampclone-cw.netlify.app/",
     githubLink: "https://github.com/itsApurba/Time-Camp-Clone",
+    image: timecamp,
   },
   {
-    name: "MeanBuy Clone",
+    name: "MeanBuy",
     description:
       "MeanBuy is a platform for you to buy products instantly or on a monthly subscription basis.",
     technology: ["Javascript", "CSS3", "HTML"],
     deployLink: "https://itsmeanbuy.netlify.app/",
     githubLink: "https://github.com/itsApurba/Meanbuy-Clone",
+    image: meanbuy,
+  },
+  {
+    name: "Fabbag",
+    description:
+      "Fab Bag offers an online retail platform for beauty discovery and subscription. The company provides beauty and cosmetic samples on a monthly subscription basis. Member benefits also include discounts on sampled products and detailed information on how to use the products.",
+    technology: ["Javascript", "CSS3", "HTML"],
+    deployLink: "https://itsapurba.github.io/fabbag-clone/",
+    githubLink: "https://github.com/itsApurba/fabbag-clone",
+    image: fabbag,
   },
 ];

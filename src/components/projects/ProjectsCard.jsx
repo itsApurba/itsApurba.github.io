@@ -16,9 +16,8 @@ import { skills } from "../../data/data";
 const ProjectsCard = ({
   name,
   description,
-  image,
-  image2,
   technology,
+  image,
   githubLink,
   deployLink,
 }) => {
@@ -31,18 +30,21 @@ const ProjectsCard = ({
   //   console.log(skill);
   return (
     <Box
-      maxW={"100px"}
+      w={"100%"}
       h={"100%"}
       display={"flex"}
       gap={"5"}
       flexDirection={"column"}
-      p={"2"}
+      p={2}
+      m={2}
       className='box'
+      boxShadow={"xl"}
+      rounded='md'
     >
-      <Image src={image2} fallbackSrc='https://via.placeholder.com/350' />
+      <Image src={image} fallbackSrc='https://via.placeholder.com/350' />
       <VStack justify={"space-between"} h={"100%"} pb={"6"}>
         <Heading fontSize={["md", "lg", "xl", "2xl"]}>{name}</Heading>
-        <Text noOfLines={4} px={"4"} fontSize={["sm", "md", "lg"]}>
+        <Text noOfLines={3} px={"4"} fontSize={["sm", "sm", "md", "lg"]}>
           {description}
         </Text>
         <VStack>
