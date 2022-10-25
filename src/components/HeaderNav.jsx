@@ -15,6 +15,7 @@ import { animation } from "../styles/animation";
 const links = [
   { name: "About Me", path: "#about" },
   { name: "Skills", path: "#skills" },
+  { name: "Activity", path: "#activity" },
   { name: "Projects", path: "#projects" },
   { name: "Contact Me", path: "#contact" },
 ];
