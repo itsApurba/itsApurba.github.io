@@ -29,8 +29,9 @@ const HeaderNav = () => {
     <Box
       // as={motion.div}
       // animation={animation}
-      pos={"sticky"}
+      pos={"fixed"}
       top={"0"}
+      w={"full"}
       zIndex={2}
       px={4}
       boxShadow={"lg"}

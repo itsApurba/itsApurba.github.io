@@ -61,7 +61,7 @@ const About = () => {
                 Aspiring full stack developer from INDIA 🇮🇳 with a
                 specialization in MERN stack.
                 <br />
-                <br />I like to solve problems and making user-centric products,
+                <br />I like to solve problems and make user-centric products,
                 Looking forward to honing my skills in a challenging work
                 environment.
               </Text>
