@@ -7,12 +7,19 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import { transform } from "framer-motion";
 import React from "react";
 
 const SkillCard = ({ name, image, link, description }) => {
   return (
-    <Box>
-      <Link href={link} isExternal>
+    <Box transitionDuration='0.5s'>
+      <Link
+        href={link}
+        isExternal
+        _hover={{
+          textDecoration: "none",
+        }}
+      >
         <HStack
           p={4}
           bg={useColorModeValue("white", "gray.800")}
@@ -23,7 +30,14 @@ const SkillCard = ({ name, image, link, description }) => {
           textAlign='left'
           align='start'
           spacing={4}
-          _hover={{ shadow: "md" }}
+          // transform='translateY(5px)'
+          transitionDuration='0.5s'
+          _hover={{
+            shadow: "md",
+            transform: "translateY(-5px)",
+            transitionDuration: "0.5s",
+            transitionTimingFunction: "ease-in-out",
+          }}
         >
           <Box
             rounded='lg'

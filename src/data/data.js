@@ -98,7 +98,7 @@ export const projects = [
   {
     name: "MeanBuy",
     description:
-      "MeanBuy is a platform for you to buy products instantly or on a monthly subscription basis.",
+      "MeanBuy is a platform for you to buy products instantly or on a monthly subscription basis.we give you complete freedom to choose the product",
     technology: ["Javascript", "CSS3", "HTML"],
     deployLink: "https://itsmeanbuy.netlify.app/",
     githubLink: "https://github.com/itsApurba/Meanbuy-Clone",

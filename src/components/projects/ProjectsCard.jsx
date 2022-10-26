@@ -30,18 +30,30 @@ const ProjectsCard = ({
   //   console.log(skill);
   return (
     <Box
-      w={"100%"}
-      h={"100%"}
+      w={"90%"}
+      h={"85%"}
       display={"flex"}
       gap={"5"}
       flexDirection={"column"}
-      p={2}
-      m={2}
+      mx={4}
+      mt={4}
+      mb={10}
       className='box'
       boxShadow={"xl"}
       rounded='md'
+      transitionDuration='0.5s'
+      _hover={{
+        shadow: "md",
+        transform: "translateY(-5px)",
+        transitionDuration: "0.5s",
+        transitionTimingFunction: "ease-in-out",
+      }}
     >
-      <Image src={image} fallbackSrc='https://via.placeholder.com/350' />
+      <Image
+        rounded={"md"}
+        src={image}
+        fallbackSrc='https://via.placeholder.com/350'
+      />
       <VStack justify={"space-between"} h={"100%"} pb={"6"}>
         <Heading fontSize={["md", "lg", "xl", "2xl"]}>{name}</Heading>
         <Text noOfLines={3} px={"4"} fontSize={["sm", "sm", "md", "lg"]}>

@@ -7,10 +7,16 @@ const Navlinks = ({ name, path }) => {
       px={2}
       py={1}
       rounded={"md"}
+      // _hover={{
+      //   textDecoration: "none",
+      // }}
       _hover={{
-        textDecoration: "none",
+        transform: "translateY(-3px)",
+        transitionDuration: "0.5s",
+        transitionTimingFunction: "ease-in-out",
       }}
       href={path}
+      // fontSize={10}
     >
       {name}
     </Link>

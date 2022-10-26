@@ -4,6 +4,7 @@ import {
   Button,
   ButtonGroup,
   Center,
+  Fade,
   Flex,
   Heading,
   Text,
@@ -19,7 +20,7 @@ const About = () => {
     <section id='about'>
       <Center h={"full"}>
         <Flex
-          mt={"16"}
+          // mt={"16"}
           align={"center"}
           gap={"4"}
           direction={["column", "column", "row"]}

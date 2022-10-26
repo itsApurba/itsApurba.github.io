@@ -40,7 +40,9 @@ const Skills = () => {
     <section id='skills'>
       <Center h={"full"}>
         <VStack>
-          <VStack mt={"10"}>
+          <VStack
+          // mt={"10"}
+          >
             <Heading mt={0}>Skills</Heading>
             <Text
               fontSize={["md", "lg", "xl", "2xl"]}
@@ -68,6 +70,12 @@ const Skills = () => {
                 mr={2}
                 mt={2}
                 onClick={() => filterSkills("")}
+                _hover={{
+                  shadow: "md",
+                  transform: "translateY(-5px)",
+                  transitionDuration: "0.5s",
+                  transitionTimingFunction: "ease-in-out",
+                }}
               >
                 <HStack spacing={1}>
                   <Icon as={AiTwotoneThunderbolt} weight='fill' />
@@ -84,6 +92,12 @@ const Skills = () => {
                 mr={2}
                 mt={2}
                 onClick={() => filterSkills("development")}
+                _hover={{
+                  shadow: "md",
+                  transform: "translateY(-5px)",
+                  transitionDuration: "0.5s",
+                  transitionTimingFunction: "ease-in-out",
+                }}
               >
                 <HStack spacing={1}>
                   <Icon as={BiDesktop} weight='fill' />
@@ -102,6 +116,12 @@ const Skills = () => {
                 mr={2}
                 mt={2}
                 onClick={() => filterSkills("design")}
+                _hover={{
+                  shadow: "md",
+                  transform: "translateY(-5px)",
+                  transitionDuration: "0.5s",
+                  transitionTimingFunction: "ease-in-out",
+                }}
               >
                 <HStack spacing={1}>
                   <Icon as={GiSpiderWeb} weight='fill' />
@@ -118,6 +138,12 @@ const Skills = () => {
                 mr={2}
                 mt={2}
                 onClick={() => filterSkills("devops")}
+                _hover={{
+                  shadow: "md",
+                  transform: "translateY(-5px)",
+                  transitionDuration: "0.5s",
+                  transitionTimingFunction: "ease-in-out",
+                }}
               >
                 <HStack spacing={1}>
                   <Icon as={AiOutlineCloudServer} weight='fill' />

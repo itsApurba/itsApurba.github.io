@@ -8,7 +8,9 @@ const Activity = () => {
   return (
     <section id='activity'>
       <Center h={"full"}>
-        <VStack mt={8}>
+        <VStack
+        //  mt={8}
+        >
           <Graph />
           <HStack
             align={"center"}
