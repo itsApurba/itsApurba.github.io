@@ -19,6 +19,7 @@ const Activity = () => {
           >
             <Link isExternal href='https://github.com/itsApurba'>
               <Image
+                loading='lazy'
                 align='center'
                 width='100%'
                 h={"150px"}
