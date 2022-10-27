@@ -152,13 +152,14 @@ const Skills = () => {
               </Tab>
             </TabList>
             <TabPanels
+              my={5}
               minHeight={"45vh"}
               maxHeight={"50vh"}
               overflow='scroll'
               overflowX='hidden'
             >
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={[1, 8]}>
+                <SimpleGrid columns={[1, 2]} spacing={4}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
@@ -172,7 +173,7 @@ const Skills = () => {
                 </SimpleGrid>
               </TabPanel>
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={[2, 8]}>
+                <SimpleGrid columns={[1, 2]} spacing={4}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
@@ -186,7 +187,7 @@ const Skills = () => {
                 </SimpleGrid>
               </TabPanel>
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={[2, 8]}>
+                <SimpleGrid columns={[1, 2]} spacing={4}>
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
@@ -200,7 +201,12 @@ const Skills = () => {
                 </SimpleGrid>
               </TabPanel>
               <TabPanel px={0}>
-                <SimpleGrid columns={[1, 2]} spacing={4} mt={[2, 8]}>
+                <SimpleGrid
+                  columns={[1, 2]}
+                  spacing={4}
+                  mt={2}
+                  className='simple-grid'
+                >
                   {skillsList.map((tool, index) => (
                     <SkillCard
                       key={index}
