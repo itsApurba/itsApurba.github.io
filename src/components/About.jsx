@@ -7,11 +7,16 @@ import {
   Fade,
   Flex,
   Heading,
+  HStack,
+  IconButton,
+  Link,
   Text,
   VStack,
   Wrap,
 } from "@chakra-ui/react";
 import React from "react";
+import GitHubCalendar from "react-github-calendar";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Container from "./container";
 import Emoji from "./Emoji";
 
@@ -67,7 +72,47 @@ const About = () => {
                 environment.
               </Text>
               <ButtonGroup pt={3} isAttached={true} borderRadius={"md"}>
-                <Button bg={"green.300"}>Resume</Button>
+                <Button
+                  bg={"green.300"}
+                  transitionDuration='0.5s'
+                  _hover={{
+                    shadow: "md",
+                    transform: "translateY(-5px)",
+                    transitionDuration: "0.5s",
+                    transitionTimingFunction: "ease-in-out",
+                  }}
+                >
+                  Resume
+                </Button>
+                <HStack pl={"4"} gap={2}>
+                  <Link
+                    href={"https://github.com/itsApurba"}
+                    isExternal
+                    transitionDuration='0.5s'
+                    _hover={{
+                      shadow: "md",
+                      transform: "translateY(-5px)",
+                      transitionDuration: "0.5s",
+                      transitionTimingFunction: "ease-in-out",
+                    }}
+                  >
+                    <FaGithub size={"28px"} />
+                  </Link>
+                  <Link
+                    href={"https://in.linkedin.com/in/apurba1212"}
+                    isExternal
+                    color={"linkedin.900"}
+                    transitionDuration='0.5s'
+                    _hover={{
+                      shadow: "md",
+                      transform: "translateY(-5px)",
+                      transitionDuration: "0.5s",
+                      transitionTimingFunction: "ease-in-out",
+                    }}
+                  >
+                    <FaLinkedin size={"28px"} />
+                  </Link>
+                </HStack>
               </ButtonGroup>
             </VStack>
           </Container>
