@@ -72,10 +72,24 @@ const HeaderNav = () => {
             animation={animation}
             spacing={4}
             display={{ base: "none", md: "flex" }}
+            fontSize={["md", "md", "13px", "md"]}
           >
             {links.map((item, index) => (
               <Navlinks key={index} name={item.name} path={item.path} />
             ))}
+            <Link
+              px={2}
+              py={1}
+              rounded={"md"}
+              _hover={{
+                transform: "translateY(-3px)",
+                transitionDuration: "0.5s",
+                transitionTimingFunction: "ease-in-out",
+              }}
+              href={"/"}
+            >
+              Resume
+            </Link>
           </HStack>
         </HStack>
         <ToggleColorMode />
