@@ -6,7 +6,7 @@ const Graph = () => {
     <Link isExternal href='https://github.com/itsApurba'>
       <Image
         w={"xl"}
-        loading='lazy'
+        // loading='lazy'
         alt='Apurba Adhikary'
         src='https://activity-graph.herokuapp.com/graph?username=itsapurba&bg_color=0D1117&color=79fe96&line=79fe96&point=FFFFFF&hide_border=true'
       />

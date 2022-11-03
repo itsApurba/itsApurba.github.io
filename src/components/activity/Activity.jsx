@@ -19,7 +19,7 @@ const Activity = () => {
           >
             <Link isExternal href='https://github.com/itsApurba'>
               <Image
-                loading='lazy'
+                // loading='lazy'
                 align='center'
                 width='100%'
                 h={"150px"}
@@ -28,7 +28,7 @@ const Activity = () => {
             </Link>
             <Link isExternal href='https://github.com/itsApurba'>
               <Image
-                loading='lazy'
+                // loading='lazy'
                 h={"150px"}
                 align='center'
                 width='100%'
