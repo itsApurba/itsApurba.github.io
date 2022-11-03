@@ -1,9 +1,11 @@
 import javascript from "../assets/images/skills/javascript.png";
 import react from "../assets/images/skills/react.png";
+import nodeJs from "../assets/images/skills/nodeJs.png";
 import typescript from "../assets/images/skills/typescript.png";
 import html5 from "../assets/images/skills/html-5.png";
 import css3 from "../assets/images/skills/css3.png";
 import bootstrap from "../assets/images/skills/bootstrap.png";
+import chakraUI from "../assets/images/skills/chakraUI.png";
 import heroku from "../assets/images/skills/heroku.png";
 import vscode from "../assets/images/skills/vscode.png";
 import figma from "../assets/images/skills/figma.png";
@@ -25,6 +27,13 @@ export const skills = [
     link: "https://reactjs.org/",
     type: "development",
     image: react,
+  },
+  {
+    name: "Node",
+    description: "Web development",
+    link: "https://nodejs.org/en/",
+    type: "development",
+    image: nodeJs,
   },
   {
     name: "Typescript",
@@ -53,6 +62,13 @@ export const skills = [
     link: "https://getbootstrap.com/",
     type: "design",
     image: bootstrap,
+  },
+  {
+    name: "Chakra UI",
+    description: "Web design",
+    link: "https://chakra-ui.com/",
+    type: "design",
+    image: chakraUI,
   },
   {
     name: "Heroku",
