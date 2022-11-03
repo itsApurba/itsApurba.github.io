@@ -72,18 +72,27 @@ const About = () => {
                 environment.
               </Text>
               <ButtonGroup pt={3} isAttached={true} borderRadius={"md"}>
-                <Button
-                  bg={"green.300"}
-                  transitionDuration='0.5s'
+                <Link
+                  href='https://drive.google.com/uc?export=download&id=1iY0QDCh_cgXRx1aTk7nKCfipfkjRobRp'
+                  target={"_blank"}
                   _hover={{
-                    shadow: "md",
-                    transform: "translateY(-5px)",
-                    transitionDuration: "0.5s",
-                    transitionTimingFunction: "ease-in-out",
+                    textDecor: "none",
                   }}
                 >
-                  Resume
-                </Button>
+                  <Button
+                    bg={"green.300"}
+                    transitionDuration='0.5s'
+                    _hover={{
+                      shadow: "md",
+                      textDecoration: "none",
+                      transform: "translateY(-5px)",
+                      transitionDuration: "0.5s",
+                      transitionTimingFunction: "ease-in-out",
+                    }}
+                  >
+                    Resume
+                  </Button>
+                </Link>
                 <HStack pl={"4"} gap={2}>
                   <Link
                     href={"https://github.com/itsApurba"}

@@ -86,7 +86,7 @@ const HeaderNav = () => {
                 transitionDuration: "0.5s",
                 transitionTimingFunction: "ease-in-out",
               }}
-              href={"/"}
+              href='https://drive.google.com/uc?export=download&id=1iY0QDCh_cgXRx1aTk7nKCfipfkjRobRp'
             >
               Resume
             </Link>
