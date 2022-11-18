@@ -21,7 +21,7 @@ import "swiper/css";
 
 const Projects = () => {
   const settings = {
-    // dots: true,
+    dots: true,
     arrows: false,
     // fade: true,
     infinite: true,
