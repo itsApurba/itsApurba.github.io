@@ -23,7 +23,7 @@ const Activity = () => {
                 align='center'
                 width='100%'
                 h={"150px"}
-                src='https://streak-stats.demolab.com?user=itsApurba&theme=dark'
+                src='https://streak-stats.demolab.com/?user=itsApurba&theme=dark'
               />
             </Link>
             <Link isExternal href='https://github.com/itsApurba'>
