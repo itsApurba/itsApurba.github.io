@@ -12,6 +12,7 @@ import figma from "../assets/images/skills/figma.png";
 import meanbuy from "../assets/images/projects/meanbuy1.png";
 import fabbag from "../assets/images/projects/fabbag1.png";
 import timecamp from "../assets/images/projects/timecamp1.png";
+import ShoppingParadise from "../assets/images/projects/shoppingParadise1.png";
 
 export const skills = [
   {
@@ -128,5 +129,14 @@ export const projects = [
     deployLink: "https://itsapurba.github.io/fabbag-clone/",
     githubLink: "https://github.com/itsApurba/fabbag-clone",
     image: fabbag,
+  },
+  {
+    name: "ShoppingParadise",
+    description:
+      "ShoppingParadise is an E-Commerce Indian based web application which sells products related to Makeup, Skin Care, Hair, Mom & Baby Care, Fragrance, Appliances and much more.",
+    technology: ["React", "Chakra UI", "Redux"],
+    deployLink: "https://your-store-app.vercel.app/",
+    githubLink: "https://github.com/itsApurba/ShoppingParadise",
+    image: ShoppingParadise,
   },
 ];
