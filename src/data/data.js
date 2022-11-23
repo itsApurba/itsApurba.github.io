@@ -103,6 +103,15 @@ export const skills = [
 
 export const projects = [
   {
+    name: "ShoppingParadise",
+    description:
+      "ShoppingParadise is an E-Commerce Indian based web application which sells products related to Makeup, Skin Care, Hair, Mom & Baby Care, Fragrance, Appliances and much more.",
+    technology: ["React", "Chakra UI", "Redux"],
+    deployLink: "https://your-store-app.vercel.app/",
+    githubLink: "https://github.com/itsApurba/ShoppingParadise",
+    image: ShoppingParadise,
+  },
+  {
     name: "TimeCamp",
     description:
       "TimeCamp is a simple, yet feature-rich time tracking app to help you gain insights into your projects and tasks.",
@@ -129,14 +138,5 @@ export const projects = [
     deployLink: "https://itsapurba.github.io/fabbag-clone/",
     githubLink: "https://github.com/itsApurba/fabbag-clone",
     image: fabbag,
-  },
-  {
-    name: "ShoppingParadise",
-    description:
-      "ShoppingParadise is an E-Commerce Indian based web application which sells products related to Makeup, Skin Care, Hair, Mom & Baby Care, Fragrance, Appliances and much more.",
-    technology: ["React", "Chakra UI", "Redux"],
-    deployLink: "https://your-store-app.vercel.app/",
-    githubLink: "https://github.com/itsApurba/ShoppingParadise",
-    image: ShoppingParadise,
   },
 ];

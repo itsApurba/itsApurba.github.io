@@ -22,7 +22,7 @@ import "swiper/css";
 const Projects = () => {
   const settings = {
     dots: true,
-    arrows: false,
+    arrows: true,
     // fade: true,
     infinite: true,
     // autoplay: true,
