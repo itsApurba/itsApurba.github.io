@@ -8,7 +8,7 @@ const Graph = () => {
         w={"xl"}
         // loading='lazy'
         alt='Apurba Adhikary'
-        src='https://activity-graph.herokuapp.com/graph?username=itsapurba&bg_color=0D1117&color=79fe96&line=79fe96&point=FFFFFF&hide_border=true'
+        src='https://github-readme-activity-graph.cyclic.app/graph?username=itsapurba&bg_color=000000&color=ae9f37&line=578e62&point=137000&area=true&hide_border=true'
       />
     </Link>
   );
