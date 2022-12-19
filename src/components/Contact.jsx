@@ -7,7 +7,9 @@ import {
   FormErrorMessage,
   FormLabel,
   Heading,
+  HStack,
   Input,
+  Link,
   Text,
   Textarea,
   useColorModeValue,
@@ -130,8 +132,36 @@ const Contact = () => {
                       <FormErrorMessage>{errors.password}</FormErrorMessage>
                     </FormControl> */}
                     <Button type='submit' colorScheme='purple' width='full'>
-                      Send
+                      Send Mail Directly
                     </Button>
+                    <HStack w={"full"} justify={"space-between"}>
+                      <Button
+                        as={Link}
+                        colorScheme='green'
+                        _hover={{
+                          transform: "translateY(-3px)",
+                          transitionDuration: "0.5s",
+                          transitionTimingFunction: "ease-in-out",
+                          textDecoration: "none",
+                        }}
+                        href='tel://+919062371141'
+                      >
+                        Call Me
+                      </Button>
+                      <Button
+                        as={Link}
+                        colorScheme='pink'
+                        _hover={{
+                          transform: "translateY(-3px)",
+                          transitionDuration: "0.5s",
+                          transitionTimingFunction: "ease-in-out",
+                          textDecoration: "none",
+                        }}
+                        href='mailto://itsApurba@outlook.com'
+                      >
+                        Mail Me
+                      </Button>
+                    </HStack>
                   </VStack>
                 </form>
               )}

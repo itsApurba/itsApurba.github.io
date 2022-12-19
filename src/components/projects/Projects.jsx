@@ -11,13 +11,12 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { FaExternalLinkAlt, FaGithub, FaTwitter } from "react-icons/fa";
 import Slider from "react-slick";
 import { projects } from "../../data/data";
 import ProjectsCard from "./ProjectsCard";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+// import "swiper/css";
 
 const Projects = () => {
   const settings = {
@@ -56,7 +55,7 @@ const Projects = () => {
   return (
     <section id='projects'>
       <Center h={"full"}>
-        <Box position={"relative"} w={"4xl"} overflow={"hidden"}>
+        <Box position={"relative"} w={"4xl"} overflow={"hidden"} px={20}>
           <VStack>
             <Heading>Projects</Heading>
             <Text></Text>

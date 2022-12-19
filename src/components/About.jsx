@@ -16,11 +16,12 @@ import {
   Wrap,
 } from "@chakra-ui/react";
 import React from "react";
-import GitHubCalendar from "react-github-calendar";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { HiMail } from "react-icons/hi";
 import Container from "./container";
 import Emoji from "./Emoji";
-
+import { MdEmail } from "react-icons/md";
 const About = () => {
   return (
     <section id='about'>
@@ -122,6 +123,34 @@ const About = () => {
                       }}
                     >
                       <FaLinkedin size={"28px"} />
+                    </Link>
+                    <Link
+                      href={"https://api.whatsapp.com/send?phone=919062371141"}
+                      isExternal
+                      color={"green.500"}
+                      transitionDuration='0.5s'
+                      _hover={{
+                        shadow: "md",
+                        transform: "translateY(-5px)",
+                        transitionDuration: "0.5s",
+                        transitionTimingFunction: "ease-in-out",
+                      }}
+                    >
+                      <IoLogoWhatsapp size={"30px"} />
+                    </Link>
+                    <Link
+                      href={"mailto://itsApurba@outlook.com"}
+                      isExternal
+                      color={"red.600"}
+                      transitionDuration='0.5s'
+                      _hover={{
+                        shadow: "md",
+                        transform: "translateY(-5px)",
+                        transitionDuration: "0.5s",
+                        transitionTimingFunction: "ease-in-out",
+                      }}
+                    >
+                      <MdEmail size={"34px"} />
                     </Link>
                   </HStack>
                 </ButtonGroup>
