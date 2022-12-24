@@ -139,7 +139,7 @@ const About = () => {
                       <IoLogoWhatsapp size={"30px"} />
                     </Link>
                     <Link
-                      href={"mailto://itsApurba@outlook.com"}
+                      href={"mailto://its.apurba@outlook.com"}
                       isExternal
                       color={"red.600"}
                       transitionDuration='0.5s'

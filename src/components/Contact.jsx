@@ -157,7 +157,7 @@ const Contact = () => {
                           transitionTimingFunction: "ease-in-out",
                           textDecoration: "none",
                         }}
-                        href='mailto://itsApurba@outlook.com'
+                        href='mailto://its.apurba@outlook.com'
                       >
                         Mail Me
                       </Button>
@@ -169,6 +169,9 @@ const Contact = () => {
           </Box>
         </VStack>
       </Center>
+      <Text fontFamily={"cursive"} textAlign={"center"}>
+        Made by Apurba
+      </Text>
     </section>
   );
 };
