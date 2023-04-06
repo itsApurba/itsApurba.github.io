@@ -75,7 +75,7 @@ const About = () => {
                   environment.
                 </Text>
                 <ButtonGroup pt={3} isAttached={true} borderRadius={"md"}>
-                  <Link
+                  {/* <Link
                     href='https://drive.google.com/uc?export=download&id=1TProYyrD1Vlbmy3GdMzesgicSlmjCQng'
                     target={"_blank"}
                     _hover={{
@@ -95,7 +95,7 @@ const About = () => {
                     >
                       Resume
                     </Button>
-                  </Link>
+                  </Link> */}
                   <HStack pl={"4"} gap={2}>
                     <Link
                       href={"https://github.com/itsApurba"}
