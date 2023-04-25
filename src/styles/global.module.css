@@ -8,7 +8,7 @@ body {
 }
 section {
   height: 100vh;
-  scroll-snap-align: center;
+  /* scroll-snap-align: center; */
   /* position: relative; */
   padding: 4%;
 }
