@@ -38,14 +38,7 @@ const HeaderNav = () => {
       boxShadow={"lg"}
       bg={colorValue}
     >
-      <Flex
-        h={"14"}
-        align={"center"}
-        justify={"space-between"}
-        w={["90%", "85%", "80%"]}
-        maxW={900}
-        mx='auto'
-      >
+      <Flex h={"14"} align={"center"} justify={"space-between"} w={["90%", "85%", "80%"]} maxW={900} mx='auto'>
         <IconButton
           as={motion.div}
           animation={animation}
@@ -67,17 +60,11 @@ const HeaderNav = () => {
             />
           </Box>
 
-          <HStack
-            as={motion.div}
-            animation={animation}
-            spacing={4}
-            display={{ base: "none", md: "flex" }}
-            fontSize={["md", "md", "13px", "md"]}
-          >
+          <HStack as={motion.div} animation={animation} spacing={4} display={{ base: "none", md: "flex" }} fontSize={["md", "md", "13px", "md"]}>
             {links.map((item, index) => (
               <Navlinks key={index} name={item.name} path={item.path} />
             ))}
-            {/* <Link
+            <Link
               px={2}
               py={1}
               rounded={"md"}
@@ -87,29 +74,19 @@ const HeaderNav = () => {
                 transitionTimingFunction: "ease-in-out",
               }}
               target={"_blank"}
-              href='https://drive.google.com/uc?export=download&id=1TProYyrD1Vlbmy3GdMzesgicSlmjCQng'
+              href='https://drive.google.com/file/d/1dIo3Q5BZjp08jHGHvYYBg0oNVy1XmOYC/view?usp=sharing'
             >
               Resume
-            </Link> */}
+            </Link>
           </HStack>
         </HStack>
         <ToggleColorMode />
       </Flex>
       {isOpen && (
-        <Box
-          pb={4}
-          w={["100%", "100%", "80%"]}
-          maxW={800}
-          display={["inherit", "inherit", "none"]}
-        >
+        <Box pb={4} w={["100%", "100%", "80%"]} maxW={800} display={["inherit", "inherit", "none"]}>
           <Stack as={"nav"} spacing={4}>
             {links.map((link, index) => (
-              <Navlinks
-                index={index}
-                name={link.name}
-                path={link.path}
-                onClose={onClose}
-              />
+              <Navlinks index={index} name={link.name} path={link.path} onClose={onClose} />
             ))}
           </Stack>
         </Box>
