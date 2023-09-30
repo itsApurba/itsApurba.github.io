@@ -62,7 +62,7 @@ const About = () => {
                       textDecor: "none",
                     }}
                   >
-                    <Button
+                    {/* <Button
                       bg={"green.300"}
                       transitionDuration='0.5s'
                       _hover={{
@@ -74,7 +74,7 @@ const About = () => {
                       }}
                     >
                       Resume
-                    </Button>
+                    </Button> */}
                   </Link>
                   <HStack pl={"4"} gap={2}>
                     <Link

@@ -64,7 +64,7 @@ const HeaderNav = () => {
             {links.map((item, index) => (
               <Navlinks key={index} name={item.name} path={item.path} />
             ))}
-            <Link
+            {/* <Link
               px={2}
               py={1}
               rounded={"md"}
@@ -77,7 +77,7 @@ const HeaderNav = () => {
               href='https://drive.google.com/file/d/1dIo3Q5BZjp08jHGHvYYBg0oNVy1XmOYC/view?usp=sharing'
             >
               Resume
-            </Link>
+            </Link> */}
           </HStack>
         </HStack>
         <ToggleColorMode />
