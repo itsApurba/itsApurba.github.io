@@ -49,7 +49,7 @@ const About = () => {
 
               <VStack align={"flex-start"}>
                 <Text align='left' fontSize={["sm", "md", "lg"]}>
-                  Aspiring full stack developer from INDIA 🇮🇳 with a specialization in MERN stack.
+                  I build web applications using MERN stack.
                   <br />
                   <br />I like to solve problems and make user-centric products, Looking forward to honing my skills in a challenging work environment.
                 </Text>
