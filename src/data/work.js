@@ -6,7 +6,7 @@ export const work = [
     name: "Voice calling app",
     status: "Shipped · 2026",
     summary:
-      "A Flutter voice-calling app for support that rings like a phone call. Calls run on LiveKit over WebRTC, and ConnectionService surfaces the incoming call on Android, so a locked phone still rings.",
+      "A Flutter app for voice support calls, built on LiveKit over WebRTC. Incoming calls show through Android's ConnectionService, so they ring even when the phone is locked.",
     stack: ["Flutter", "Dart", "LiveKit", "WebRTC", "ConnectionService"],
   },
   {
@@ -14,7 +14,7 @@ export const work = [
     name: "ERPNext and Frappe HR",
     status: "Shipped · 2026",
     summary:
-      "ERPNext and Frappe HRMS customization on v15 and v16, shaped around how a team works: custom field behavior (including what shows on mobile) and repeatable fixture exports. Also Frappe deployment with Docker Compose, so a site comes up the same way twice, and standard ERP implementation.",
+      "ERPNext and Frappe HRMS customization on v15 and v16: custom fields and mobile-friendly screens, fixture exports, Frappe deployment with Docker Compose, and standard ERP implementation.",
     stack: ["ERPNext", "Frappe", "Frappe HRMS", "Python", "Docker Compose"],
   },
   {

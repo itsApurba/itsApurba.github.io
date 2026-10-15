@@ -6,15 +6,15 @@
 
 export const profile = {
   name: "Apurba Adhikary",
-  role: "Programmer",
-  // PLACEHOLDER: the current employer, shown as "Programmer at <company>".
+  role: "Full-stack developer",
+  // PLACEHOLDER: the current employer, shown as "Full-stack developer at <company>".
   company: null,
   location: "Bengaluru, India",
   from: "Kolkata",
   available: "Available for new work",
   avatar: "https://avatars.githubusercontent.com/u/25547103?s=320",
   intro:
-    "I write software that has to survive contact with real users: mostly Flutter mobile apps, plus ERPNext and Frappe systems and the agents that sit beside them. I also build full-stack web apps with React, Node.js and MongoDB.",
+    "I build mobile apps, ERPNext and Frappe systems, and voice AI agents. Most of my work is in Flutter, with React, Node.js and MongoDB on the web.",
 };
 
 export const links = {
