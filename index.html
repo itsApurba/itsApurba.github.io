@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Apurba Adhikary · Full-stack web developer</title>
+    <meta
+      name="description"
+      content="Apurba Adhikary, full-stack (MERN) web developer in Kolkata, India. Projects: BarReplay, Toofaani, Sharewise and TaskFlow."
+    />
+    <link rel="canonical" href="https://itsapurba.github.io/" />
+    <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://itsapurba.github.io/" />
+    <meta property="og:title" content="Apurba Adhikary · Full-stack web developer" />
+    <meta
+      property="og:description"
+      content="Full-stack (MERN) web developer in Kolkata, India. Projects: BarReplay, Toofaani, Sharewise and TaskFlow."
+    />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/25547103?s=400" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="preconnect" href="https://avatars.githubusercontent.com" />
+    <script>
+      // Apply the saved or system theme before first paint.
+      (function () {
+        var theme;
+        try {
+          theme = localStorage.getItem("theme");
+        } catch (e) {}
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
