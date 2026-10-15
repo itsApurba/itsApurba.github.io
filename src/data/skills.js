@@ -3,11 +3,11 @@
 export const skills = [
   {
     group: "AI and agents",
-    items: ["Multi-agent tooling", "Coding agents", "Voice agents", "Realtime APIs", "LLM APIs (Grok, Claude, Groq)", "Protobuf APIs"],
+    items: ["Multi-agent tooling", "Voice agents", "Realtime APIs"],
   },
   {
     group: "Mobile",
-    items: ["Flutter", "Dart", "WebRTC", "CallKit", "ConnectionService"],
+    items: ["Flutter", "Dart", "LiveKit", "WebRTC", "ConnectionService"],
   },
   {
     group: "Web",
@@ -15,7 +15,7 @@ export const skills = [
   },
   {
     group: "Business systems",
-    items: ["Frappe", "Frappe HRMS", "Python"],
+    items: ["ERPNext", "Frappe (v15)", "Frappe HRMS", "Frappe deployment", "ERP implementation", "Python"],
   },
   {
     group: "Data",

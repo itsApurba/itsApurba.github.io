@@ -3,27 +3,19 @@
 export const work = [
   {
     id: "support-calls",
-    name: "Support calling app",
+    name: "Voice calling app",
     status: "Shipped · 2026",
     summary:
-      "A Flutter app that rings like a phone call. It joins a Cloudflare Realtime room over WebRTC and surfaces the incoming call through CallKit on iOS and ConnectionService on Android, so a locked phone still rings.",
-    stack: ["Flutter", "Dart", "WebRTC", "Cloudflare Realtime", "CallKit", "ConnectionService"],
+      "A Flutter voice-calling app for support that rings like a phone call. Calls run on LiveKit over WebRTC, and ConnectionService surfaces the incoming call on Android, so a locked phone still rings.",
+    stack: ["Flutter", "Dart", "LiveKit", "WebRTC", "ConnectionService"],
   },
   {
-    id: "frappe-hr",
-    name: "Frappe HR desk",
+    id: "erpnext-frappe",
+    name: "ERPNext and Frappe HR",
     status: "Shipped · 2026",
     summary:
-      "HRMS customizations on Frappe v15, shaped around how a team works: custom field behavior (including what shows on mobile), repeatable fixture exports, and a Docker Compose deploy so the desk comes up the same way twice.",
-    stack: ["Frappe", "Frappe HRMS", "Python", "Docker Compose"],
-  },
-  {
-    id: "openwarp",
-    name: "OpenWarp",
-    status: "In progress · 2026",
-    summary:
-      "A Rust terminal where more than one coding agent can share a workspace: conversations, files and tools in one place, behind protobuf APIs, so the model behind it (Grok, Claude, Groq) can change without rewriting the terminal around one vendor.",
-    stack: ["Rust", "Protobuf", "AI agents"],
+      "ERPNext and Frappe HRMS customization on v15, shaped around how a team works: custom field behavior (including what shows on mobile) and repeatable fixture exports. Also Frappe deployment with Docker Compose, so a site comes up the same way twice, and standard ERP implementation.",
+    stack: ["ERPNext", "Frappe", "Frappe HRMS", "Python", "Docker Compose"],
   },
   {
     id: "digital-info-link",

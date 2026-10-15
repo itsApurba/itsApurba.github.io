@@ -14,7 +14,7 @@ export const profile = {
   available: "Available for new work",
   avatar: "https://avatars.githubusercontent.com/u/25547103?s=320",
   intro:
-    "I write software that has to survive contact with real users: Flutter apps, Frappe systems, and the agents that sit beside them. I also build full-stack web apps with React, Node.js and MongoDB.",
+    "I write software that has to survive contact with real users: mostly Flutter mobile apps, plus ERPNext and Frappe systems and the agents that sit beside them. I also build full-stack web apps with React, Node.js and MongoDB.",
 };
 
 export const links = {
