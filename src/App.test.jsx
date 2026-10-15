@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { headline, leadProjects, otherProjects } from "./data/projects";
 import { links } from "./data/site";
+import { work } from "./data/work";
 import { render } from "./entry-server";
 
 const html = render();
@@ -8,7 +9,7 @@ const html = render();
 describe("portfolio page", () => {
   it("has the hero, projects, skills and contact sections", () => {
     expect(html).toContain("Apurba Adhikary");
-    for (const id of ["projects", "skills", "contact"]) {
+    for (const id of ["projects", "work", "skills", "contact"]) {
       expect(html).toContain(`id="${id}"`);
     }
   });
@@ -31,6 +32,14 @@ describe("portfolio page", () => {
     expect(html).toContain(`href="${links.github}"`);
     expect(html).toContain(`href="${links.linkedin}"`);
     expect(html).toContain(`href="mailto:${links.email}"`);
+    expect(html).toContain(`href="${links.x}"`);
+    expect(html).not.toContain("utm_");
+  });
+
+  it("lists every recent work item", () => {
+    for (const item of work) {
+      expect(html).toContain(`id="work-${item.id}"`);
+    }
   });
 
   it("marks a missing link as a placeholder in the dev server instead of rendering an empty link", () => {

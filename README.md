@@ -9,9 +9,11 @@ HTML, so it shows its content before any JavaScript runs.
 
 Everything the page says is in `src/data/`:
 
-- `site.js`: name, intro, location, and the GitHub, LinkedIn, email and resume links.
+- `site.js`: name, role, current company, intro, location, and the GitHub, LinkedIn, X,
+  email and resume links.
 - `projects.js`: the projects. `headline` picks which lead project (`"barreplay"` or
   `"toofaani"`) comes first as "Currently building".
+- `work.js`: the "Recent work" entries.
 - `skills.js`: the skill groups.
 
 A link or screenshot set to `null` is a placeholder. The dev server and pull request

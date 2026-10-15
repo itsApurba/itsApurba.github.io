@@ -2,6 +2,7 @@ import { MoonIcon, SunIcon } from "./Icons";
 
 const nav = [
   { href: "#projects", label: "Projects" },
+  { href: "#work", label: "Work" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ];

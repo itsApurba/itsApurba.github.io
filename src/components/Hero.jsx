@@ -1,18 +1,22 @@
 import { links, profile } from "../data/site";
-import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, PinIcon } from "./Icons";
+import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, PinIcon, XIcon } from "./Icons";
 import Todo from "./Todo";
 
 const Hero = () => (
   <section className="hero" aria-labelledby="hero-title">
     <img className="hero__avatar" src={profile.avatar} alt="" width="112" height="112" />
-    <p className="eyebrow">{profile.role}</p>
+    <p className="eyebrow">
+      {profile.role}
+      {profile.company ? ` at ${profile.company}` : <Todo>current company</Todo>}
+    </p>
     <h1 id="hero-title" className="hero__title">
       Hi, I'm {profile.name}.
     </h1>
     <p className="hero__intro">{profile.intro}</p>
     <p className="hero__meta">
-      <PinIcon width={16} height={16} /> {profile.location}
+      <PinIcon width={16} height={16} /> {profile.location}, from {profile.from}
     </p>
+    <p className="hero__status">{profile.available}</p>
 
     <div className="hero__actions">
       <a className="button button--primary" href="#projects">
@@ -36,6 +40,11 @@ const Hero = () => (
       <li>
         <a className="icon-button" href={links.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <LinkedInIcon />
+        </a>
+      </li>
+      <li>
+        <a className="icon-button" href={links.x} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+          <XIcon />
         </a>
       </li>
       <li>

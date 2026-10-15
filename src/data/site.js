@@ -6,16 +6,21 @@
 
 export const profile = {
   name: "Apurba Adhikary",
-  role: "Full-stack web developer (MERN)",
-  location: "Kolkata, India",
+  role: "Programmer",
+  // PLACEHOLDER: the current employer, shown as "Programmer at <company>".
+  company: null,
+  location: "Bengaluru, India",
+  from: "Kolkata",
+  available: "Available for new work",
   avatar: "https://avatars.githubusercontent.com/u/25547103?s=320",
   intro:
-    "I build web applications using the MERN stack. I like to solve problems and make user-centric products.",
+    "I write software that has to survive contact with real users: Flutter apps, Frappe systems, and the agents that sit beside them. I also build full-stack web apps with React, Node.js and MongoDB.",
 };
 
 export const links = {
   github: "https://github.com/itsApurba",
-  linkedin: "https://www.linkedin.com/in/apurba1212",
+  linkedin: "https://www.linkedin.com/in/itsapurbaa",
+  x: "https://x.com/twitApurba",
   email: "its.apurba@outlook.com",
   // PLACEHOLDER: link to the current resume (PDF or Google Drive "anyone with
   // the link" URL).

@@ -93,7 +93,8 @@ p {
   margin: 0;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
@@ -174,7 +175,7 @@ ul {
 
 .header__nav a {
   display: block;
-  padding: 10px 10px;
+  padding: 10px 7px;
   color: var(--text);
   font-size: 0.95rem;
   font-weight: 500;
@@ -297,6 +298,14 @@ ul {
   font-family: var(--mono);
   font-size: 0.82rem;
   font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.eyebrow .todo {
+  min-height: 0;
+  margin-left: 8px;
+  padding: 2px 8px;
 }
 
 /* Hero */
@@ -334,6 +343,26 @@ ul {
   margin-top: 12px;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.hero__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.hero__status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
 }
 
 .hero__actions {
@@ -456,6 +485,44 @@ ul {
   color: var(--muted);
 }
 
+/* Recent work */
+
+.work {
+  display: grid;
+  gap: 16px;
+  list-style: none;
+}
+
+.work__item article {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.work__status {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.work__title {
+  font-size: 1.2rem;
+}
+
+.work__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  font-weight: 600;
+}
+
 /* Skills */
 
 .skills {
@@ -536,6 +603,7 @@ ul {
   }
 
   .projects__grid,
+  .work,
   .skills {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -555,6 +623,6 @@ ul {
   }
 
   .skills {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

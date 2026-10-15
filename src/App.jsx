@@ -1,8 +1,9 @@
 import Contact from "./components/Contact";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Projects from "./components/Projects";
+import { LeadProjects, MoreProjects } from "./components/Projects";
 import Skills from "./components/Skills";
+import Work from "./components/Work";
 
 const App = () => (
   <>
@@ -12,7 +13,9 @@ const App = () => (
     <Header />
     <main id="main" className="page">
       <Hero />
-      <Projects />
+      <LeadProjects />
+      <Work />
+      <MoreProjects />
       <Skills />
       <Contact />
     </main>

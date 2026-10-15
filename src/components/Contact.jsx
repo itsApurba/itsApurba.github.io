@@ -1,5 +1,5 @@
 import { links, profile } from "../data/site";
-import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
+import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, XIcon } from "./Icons";
 import Todo, { showPlaceholders } from "./Todo";
 
 const Contact = () => (
@@ -7,11 +7,16 @@ const Contact = () => (
     <h2 id="contact-title" className="section__title">
       Get in touch
     </h2>
-    <p className="contact__lead">Email is the quickest way to reach me.</p>
+    <p className="contact__lead">The fastest reply is on X. Email works too.</p>
     <a className="contact__email" href={`mailto:${links.email}`}>
       <MailIcon /> {links.email}
     </a>
     <ul className="contact__links">
+      <li>
+        <a className="button" href={links.x} target="_blank" rel="noopener noreferrer">
+          <XIcon /> @{links.x.split("/").pop()}
+        </a>
+      </li>
       <li>
         <a className="button" href={links.linkedin} target="_blank" rel="noopener noreferrer">
           <LinkedInIcon /> LinkedIn
