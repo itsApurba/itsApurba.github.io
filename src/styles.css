@@ -503,6 +503,22 @@ ol {
   border-top: 1px dashed var(--border);
 }
 
+.demo__more {
+  margin-top: 8px;
+}
+
+.demo__more summary {
+  padding: 6px 0;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.demo__more[open] summary {
+  margin-bottom: 6px;
+}
+
 .copy {
   display: flex;
   align-items: center;

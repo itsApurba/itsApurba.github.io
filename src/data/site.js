@@ -6,8 +6,8 @@
 
 export const profile = {
   name: "Apurba Adhikary",
-  role: "Full-stack developer",
-  // PLACEHOLDER: the current employer, shown as "Full-stack developer at <company>".
+  role: "Programmer",
+  // PLACEHOLDER: the current employer, shown as "Programmer at <company>".
   company: null,
   location: "Bengaluru, India",
   from: "Kolkata",

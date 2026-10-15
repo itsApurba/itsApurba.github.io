@@ -23,26 +23,43 @@ const CopyValue = ({ value, label }) => {
   );
 };
 
-const DemoLogins = ({ project }) => (
-  <div className="demo">
-    <p className="demo__title">Demo accounts</p>
-    <dl className="demo__list">
-      {project.demo.accounts.map((account) => (
-        <div key={account.email} className="demo__row">
-          <dt>{account.name}</dt>
-          <dd>
-            <CopyValue value={account.email} label={`${account.name} email`} />
-          </dd>
-        </div>
-      ))}
-      <div className="demo__row demo__row--password">
-        <dt>Password (every account)</dt>
-        <dd>
-          <CopyValue value={project.demo.password} label={`${project.name} demo password`} />
-        </dd>
-      </div>
-    </dl>
+const AccountRow = ({ account }) => (
+  <div className="demo__row">
+    <dt>{account.name}</dt>
+    <dd>
+      <CopyValue value={account.email} label={`${account.name} email`} />
+    </dd>
   </div>
 );
+
+// The first account and the shared password are always shown; the rest sit
+// behind a native toggle so they work without the page's script.
+const DemoLogins = ({ project }) => {
+  const [first, ...rest] = project.demo.accounts;
+  return (
+    <div className="demo">
+      <p className="demo__title">Demo accounts</p>
+      <dl className="demo__list">
+        <AccountRow account={first} />
+        <div className="demo__row demo__row--password">
+          <dt>Password (every account)</dt>
+          <dd>
+            <CopyValue value={project.demo.password} label={`${project.name} demo password`} />
+          </dd>
+        </div>
+      </dl>
+      {rest.length > 0 && (
+        <details className="demo__more">
+          <summary>{`Show all ${project.demo.accounts.length} accounts`}</summary>
+          <dl className="demo__list">
+            {rest.map((account) => (
+              <AccountRow key={account.email} account={account} />
+            ))}
+          </dl>
+        </details>
+      )}
+    </div>
+  );
+};
 
 export default DemoLogins;

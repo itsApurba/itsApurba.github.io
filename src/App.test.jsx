@@ -35,6 +35,24 @@ describe("portfolio page", () => {
     }
   });
 
+  it("shows the first demo account and the password, with the rest behind a toggle", () => {
+    for (const project of projects.filter((p) => p.demo)) {
+      const card = html.slice(html.indexOf(`id="project-${project.id}"`));
+      const demo = card.slice(card.indexOf('class="demo"'), card.indexOf("</details>"));
+      const [visible, hidden] = demo.split("<details");
+      const [first, ...rest] = project.demo.accounts;
+      expect(visible).toContain(first.email);
+      expect(visible).toContain(project.demo.password);
+      expect(hidden).not.toMatch(/^[^>]*\bopen\b/);
+      expect(hidden).toContain(`Show all ${project.demo.accounts.length} accounts</summary>`);
+      for (const account of rest) {
+        expect(visible).not.toContain(account.email);
+        expect(hidden).toContain(account.email);
+        expect(hidden).toContain(`aria-label="Copy ${account.name} email"`);
+      }
+    }
+  });
+
   it("shows every project", () => {
     for (const project of projects) {
       expect(html).toContain(`id="project-${project.id}"`);
