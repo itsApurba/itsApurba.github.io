@@ -1,6 +1,6 @@
 import { links, profile } from "../data/site";
 import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon } from "./Icons";
-import Todo from "./Todo";
+import Todo, { showPlaceholders } from "./Todo";
 
 const Contact = () => (
   <section id="contact" className="section contact" aria-labelledby="contact-title">
@@ -22,15 +22,17 @@ const Contact = () => (
           <GitHubIcon /> GitHub
         </a>
       </li>
-      <li>
-        {links.resume ? (
-          <a className="button" href={links.resume} target="_blank" rel="noopener noreferrer">
-            <FileIcon /> Resume
-          </a>
-        ) : (
-          <Todo>resume link</Todo>
-        )}
-      </li>
+      {(links.resume || showPlaceholders()) && (
+        <li>
+          {links.resume ? (
+            <a className="button" href={links.resume} target="_blank" rel="noopener noreferrer">
+              <FileIcon /> Resume
+            </a>
+          ) : (
+            <Todo>resume link</Todo>
+          )}
+        </li>
+      )}
     </ul>
     <p className="footer">
       {profile.name} · {profile.location}

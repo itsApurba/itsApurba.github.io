@@ -7,8 +7,9 @@ import taskflowShot from "../assets/projects/taskflow.webp";
 export const headline = "barreplay";
 
 // `live`, `source` or `image` set to null is a PLACEHOLDER the owner fills in;
-// the page marks it as "To add". `sourceNote` explains a missing source link;
-// set `source: false` to show only that note, with no "To add" marker.
+// previews mark it as "To add" and the published site leaves it out.
+// `sourceNote` explains a missing source link; set `source: false` to show
+// only that note, with no "To add" marker.
 const leads = [
   {
     id: "barreplay",

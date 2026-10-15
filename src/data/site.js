@@ -1,8 +1,8 @@
 // Everything the page says lives in this folder. Edit here, not in the components.
 //
 // A value of `null` marked "PLACEHOLDER" is something the owner still has to
-// fill in. The page shows it as a dashed "To add" badge until it is set, so a
-// missing link is never silently hidden or invented.
+// fill in. The dev server and pull request builds show it as a dashed "To add"
+// badge; the published site leaves it out, so a missing link is never invented.
 
 export const profile = {
   name: "Apurba Adhikary",
@@ -21,6 +21,3 @@ export const links = {
   // the link" URL).
   resume: null,
 };
-
-// The site URL, used for the canonical link and social previews.
-export const siteUrl = "https://itsapurba.github.io/";

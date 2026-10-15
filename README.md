@@ -14,8 +14,9 @@ Everything the page says is in `src/data/`:
   `"toofaani"`) comes first as "Currently building".
 - `skills.js`: the skill groups.
 
-A link or screenshot set to `null` is a placeholder. The page shows it as a dashed
-"To add: ..." badge until it is filled in. Project screenshots live in
+A link or screenshot set to `null` is a placeholder. The dev server and pull request
+builds show it as a dashed "To add: ..." badge; the published site (the push to `main`)
+leaves it out until it is filled in. Project screenshots live in
 `src/assets/projects/` (1280x800 WebP works well).
 
 ## Running it

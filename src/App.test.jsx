@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 import { headline, leadProjects, otherProjects } from "./data/projects";
 import { links } from "./data/site";
 import { render } from "./entry-server";
@@ -33,11 +33,36 @@ describe("portfolio page", () => {
     expect(html).toContain(`href="mailto:${links.email}"`);
   });
 
-  it("marks a missing link as a placeholder instead of rendering an empty link", () => {
+  it("marks a missing link as a placeholder in the dev server instead of rendering an empty link", () => {
     expect(html).not.toMatch(/href="(null|undefined|)"/);
     const missing = [...leadProjects, ...otherProjects].some((p) => !p.live || p.source === null || !p.image);
     if (missing || !links.resume) {
       expect(html).toContain("data-placeholder");
     }
+  });
+
+  describe("production build", () => {
+    afterEach(() => vi.unstubAllEnvs());
+
+    it("leaves unset items out instead of showing placeholders", () => {
+      vi.stubEnv("DEV", false);
+      vi.stubEnv("VITE_SHOW_PLACEHOLDERS", "false");
+      const published = render();
+      expect(published).not.toContain("data-placeholder");
+      expect(published).not.toContain("To add");
+      expect(published).not.toMatch(/href="(null|undefined|)"/);
+      for (const project of [...leadProjects, ...otherProjects]) {
+        expect(published).toContain(`id="project-${project.id}"`);
+      }
+    });
+
+    it("shows placeholders in a pull request preview build", () => {
+      vi.stubEnv("DEV", false);
+      vi.stubEnv("VITE_SHOW_PLACEHOLDERS", "true");
+      const missing = [...leadProjects, ...otherProjects].some((p) => !p.live || p.source === null || !p.image);
+      if (missing || !links.resume) {
+        expect(render()).toContain("data-placeholder");
+      }
+    });
   });
 });

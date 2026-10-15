@@ -1,5 +1,5 @@
 import { CodeIcon, ExternalIcon } from "./Icons";
-import Todo from "./Todo";
+import Todo, { showPlaceholders } from "./Todo";
 
 const Source = ({ project }) => {
   if (project.source) {
@@ -20,8 +20,8 @@ const ProjectCard = ({ project, eyebrow, lead = false }) => {
   const titleId = `project-${project.id}`;
   return (
     <article className={lead ? "project project--lead" : "project"} aria-labelledby={titleId}>
-      <div className={project.image ? "project__media" : "project__media project__media--empty"}>
-        {project.image ? (
+      {project.image ? (
+        <div className="project__media">
           <img
             src={project.image}
             alt={project.imageAlt}
@@ -30,12 +30,16 @@ const ProjectCard = ({ project, eyebrow, lead = false }) => {
             loading={lead ? "eager" : "lazy"}
             decoding="async"
           />
-        ) : (
-          <div className="project__media-empty">
-            <Todo>screenshot</Todo>
+        </div>
+      ) : (
+        showPlaceholders() && (
+          <div className="project__media project__media--empty">
+            <div className="project__media-empty">
+              <Todo>screenshot</Todo>
+            </div>
           </div>
-        )}
-      </div>
+        )
+      )}
       <div className="project__body">
         <div className="project__intro">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
