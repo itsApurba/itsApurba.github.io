@@ -14,7 +14,7 @@ export const work = [
     name: "ERPNext and Frappe HR",
     status: "Shipped · 2026",
     summary:
-      "ERPNext and Frappe HRMS customization on v15, shaped around how a team works: custom field behavior (including what shows on mobile) and repeatable fixture exports. Also Frappe deployment with Docker Compose, so a site comes up the same way twice, and standard ERP implementation.",
+      "ERPNext and Frappe HRMS customization on v15 and v16, shaped around how a team works: custom field behavior (including what shows on mobile) and repeatable fixture exports. Also Frappe deployment with Docker Compose, so a site comes up the same way twice, and standard ERP implementation.",
     stack: ["ERPNext", "Frappe", "Frappe HRMS", "Python", "Docker Compose"],
   },
   {

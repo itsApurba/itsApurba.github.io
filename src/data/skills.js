@@ -3,7 +3,7 @@
 export const skills = [
   {
     group: "AI and agents",
-    items: ["Multi-agent tooling", "Voice agents", "Realtime APIs"],
+    items: ["Voice agents", "Realtime voice (LiveKit)"],
   },
   {
     group: "Mobile",
@@ -15,7 +15,7 @@ export const skills = [
   },
   {
     group: "Business systems",
-    items: ["ERPNext", "Frappe (v15)", "Frappe HRMS", "Frappe deployment", "ERP implementation", "Python"],
+    items: ["ERPNext", "Frappe (v15 and v16)", "Frappe HRMS", "Frappe deployment", "ERP implementation", "Python"],
   },
   {
     group: "Data",
@@ -23,6 +23,6 @@ export const skills = [
   },
   {
     group: "Systems and cloud",
-    items: ["Rust", "Docker Compose", "Linux", "Cloudflare", "Oracle Cloud", "Railway", "Vercel"],
+    items: ["Docker Compose", "Linux", "Cloudflare", "Oracle Cloud", "Railway", "Vercel"],
   },
 ];
