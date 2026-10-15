@@ -381,10 +381,10 @@ ol {
 
 /* Projects */
 
-.projects__leads,
 .projects__grid {
   display: grid;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .project {
@@ -462,13 +462,81 @@ ol {
   color: var(--accent);
 }
 
-.project__demo {
-  padding: 8px 12px;
-  border-radius: 10px;
+/* Demo accounts on a project card */
+
+.demo {
+  padding: 12px 14px;
+  border-radius: 12px;
   background: var(--accent-soft);
+}
+
+.demo__title {
+  margin-bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.demo__list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+}
+
+.demo__row {
+  display: grid;
+  gap: 2px;
+}
+
+.demo__row dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.demo__row dd {
+  margin: 0;
+  min-width: 0;
+}
+
+.demo__row--password {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border);
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 0;
+}
+
+.copy__value {
+  min-width: 0;
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.copy__button {
+  flex: none;
+  min-width: 64px;
+  min-height: 36px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copy__button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .project__actions {

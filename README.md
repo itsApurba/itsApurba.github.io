@@ -11,8 +11,8 @@ Everything the page says is in `src/data/`:
 
 - `site.js`: name, role, current company, intro, location, and the GitHub, LinkedIn, X,
   email and resume links.
-- `projects.js`: the projects. `headline` picks which lead project (`"barreplay"` or
-  `"toofaani"`) comes first as "Currently building".
+- `projects.js`: the projects, in display order (live sites first; the first one gets
+  the large card), with the demo accounts each project publishes in its README.
 - `work.js`: the "Recent work" entries.
 - `skills.js`: the skill groups.
 

@@ -1,3 +1,4 @@
+import DemoLogins from "./DemoLogins";
 import { CodeIcon, ExternalIcon } from "./Icons";
 import Todo, { showPlaceholders } from "./Todo";
 
@@ -16,7 +17,7 @@ const Source = ({ project }) => {
   return <Todo>source link{project.sourceNote ? ` (${project.sourceNote.toLowerCase()})` : ""}</Todo>;
 };
 
-const ProjectCard = ({ project, eyebrow, lead = false }) => {
+const ProjectCard = ({ project, lead = false }) => {
   const titleId = `project-${project.id}`;
   return (
     <article className={lead ? "project project--lead" : "project"} aria-labelledby={titleId}>
@@ -42,7 +43,7 @@ const ProjectCard = ({ project, eyebrow, lead = false }) => {
       )}
       <div className="project__body">
         <div className="project__intro">
-          {eyebrow && <p className="eyebrow">{eyebrow}</p>}
+          {project.eyebrow && <p className="eyebrow">{project.eyebrow}</p>}
           <h3 id={titleId} className="project__title">
             {project.name}
           </h3>
@@ -64,7 +65,7 @@ const ProjectCard = ({ project, eyebrow, lead = false }) => {
               </li>
             ))}
           </ul>
-          {project.demo && <p className="project__demo">{project.demo}</p>}
+          {project.demo && <DemoLogins project={project} />}
           <div className="project__actions">
             {project.live ? (
               <a className="button button--primary" href={project.live} target="_blank" rel="noopener noreferrer">
