@@ -18,8 +18,16 @@ Everything the page says is in `src/data/`:
 
 A link, screenshot or company set to `null` is a placeholder. The dev server and pull request
 builds show it as a dashed "To add: ..." badge; the published site (the push to `main`)
-leaves it out until it is filled in. Project screenshots live in
-`src/assets/projects/` (1280x800 WebP works well).
+leaves it out until it is filled in.
+
+## Images
+
+The original screenshots and the avatar live in `src/assets/source/`. `npm run images`
+turns them into AVIF and WebP files at a few widths in `src/assets/images/`, each with a
+tiny blurred placeholder, and regenerates `src/assets/images/index.js`; commit the result.
+To add a screenshot (for example Toofaani's), drop a 16:10 PNG named after the project
+into `src/assets/source/`, run `npm run images`, then set the project's `image` to
+`images.<name>` in `src/data/projects.js`. Phones never get a screenshot wider than 800px.
 
 ## Running it
 

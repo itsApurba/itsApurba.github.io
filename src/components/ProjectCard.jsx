@@ -1,5 +1,6 @@
 import DemoLogins from "./DemoLogins";
 import { CodeIcon, ExternalIcon } from "./Icons";
+import Picture from "./Picture";
 import Todo, { showPlaceholders } from "./Todo";
 
 const Source = ({ project }) => {
@@ -17,19 +18,24 @@ const Source = ({ project }) => {
   return <Todo>source link{project.sourceNote ? ` (${project.sourceNote.toLowerCase()})` : ""}</Todo>;
 };
 
+// The rendered width of a card's screenshot: the content column is at most
+// 1048px (1080px minus the 16px gutters), less the card's 1px borders; grid
+// cards are half of it from 720px up.
+const leadSizes = "(min-width: 1080px) 1046px, calc(100vw - 34px)";
+const gridSizes = "(min-width: 1080px) 513px, (min-width: 720px) calc(50vw - 27px), calc(100vw - 34px)";
+
 const ProjectCard = ({ project, lead = false }) => {
   const titleId = `project-${project.id}`;
   return (
     <article className={lead ? "project project--lead" : "project"} aria-labelledby={titleId}>
       {project.image ? (
         <div className="project__media">
-          <img
-            src={project.image}
+          <Picture
+            image={project.image}
             alt={project.imageAlt}
-            width="1280"
-            height="800"
+            sizes={lead ? leadSizes : gridSizes}
             loading={lead ? "eager" : "lazy"}
-            decoding="async"
+            phoneMaxWidth={800}
           />
         </div>
       ) : (

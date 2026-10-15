@@ -403,11 +403,23 @@ ol {
   border-bottom: 1px solid var(--border);
 }
 
+.project__media .picture {
+  display: block;
+  height: 100%;
+}
+
 .project__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
+}
+
+/* The blurred placeholder behind a responsive image until it loads. */
+.picture__img {
+  background-color: var(--surface-2);
+  background-size: cover;
+  background-position: top;
 }
 
 .project__media-empty {

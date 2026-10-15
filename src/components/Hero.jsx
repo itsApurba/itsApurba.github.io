@@ -1,10 +1,18 @@
 import { links, profile } from "../data/site";
 import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, PinIcon, XIcon } from "./Icons";
+import Picture from "./Picture";
 import Todo from "./Todo";
 
 const Hero = () => (
   <section className="hero" aria-labelledby="hero-title">
-    <img className="hero__avatar" src={profile.avatar} alt="" width="112" height="112" />
+    <Picture
+      image={profile.avatar}
+      alt=""
+      className="hero__avatar"
+      sizes="(min-width: 720px) 112px, 96px"
+      loading="eager"
+      fetchPriority="high"
+    />
     <p className="eyebrow">
       {profile.role}
       {profile.company ? ` at ${profile.company}` : <Todo>current company</Todo>}

@@ -1,6 +1,4 @@
-import barreplayShot from "../assets/projects/barreplay.webp";
-import sharewiseShot from "../assets/projects/sharewise.webp";
-import taskflowShot from "../assets/projects/taskflow.webp";
+import { images } from "../assets/images";
 
 // `live`, `source` or `image` set to null is a PLACEHOLDER the owner fills in;
 // previews mark it as "To add" and the published site leaves it out.
@@ -29,7 +27,7 @@ export const projects = [
     // PLACEHOLDER: the repository is not on GitHub yet.
     source: null,
     sourceNote: "Repository not published yet",
-    image: barreplayShot,
+    image: images.barreplay,
     imageAlt: "BarReplay chart of XAUUSD 15-minute candles with drawing tools and replay controls",
   },
   {
@@ -55,7 +53,7 @@ export const projects = [
         { name: "Lena Vogel", email: "lena@sharewise.dev" },
       ],
     },
-    image: sharewiseShot,
+    image: images.sharewise,
     imageAlt: "Sharewise lesson page with a highlighted JavaScript snippet and a quiz",
   },
   {
@@ -80,7 +78,7 @@ export const projects = [
         { name: "Meera Iyer (worker)", email: "meera@taskflow.demo" },
       ],
     },
-    image: taskflowShot,
+    image: images.taskflow,
     imageAlt: "TaskFlow task market with three claimable tasks and their credit rewards",
   },
   {

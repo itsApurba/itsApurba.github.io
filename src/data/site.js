@@ -4,6 +4,8 @@
 // fill in. The dev server and pull request builds show it as a dashed "To add"
 // badge; the published site leaves it out, so a missing link is never invented.
 
+import { images } from "../assets/images";
+
 export const profile = {
   name: "Apurba Adhikary",
   role: "Programmer",
@@ -12,7 +14,7 @@ export const profile = {
   location: "Bengaluru, India",
   from: "Kolkata",
   available: "Available for new work",
-  avatar: "https://avatars.githubusercontent.com/u/25547103?s=320",
+  avatar: images.avatar,
   intro:
     "I build mobile apps, ERPNext and Frappe systems, and voice AI agents. Most of my work is in Flutter, with React, Node.js and MongoDB on the web.",
 };

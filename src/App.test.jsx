@@ -59,6 +59,40 @@ describe("portfolio page", () => {
     }
   });
 
+  it("serves every image as responsive AVIF and WebP with fixed dimensions", () => {
+    const pictures = html.match(/<picture[\s\S]*?<\/picture>/g) ?? [];
+    const withImages = projects.filter((p) => p.image).length;
+    expect(pictures.length).toBe(withImages + 1); // the screenshots plus the avatar
+    for (const picture of pictures) {
+      expect(picture).toMatch(/<source type="image\/avif" srcSet="[^"]+ \d+w, [^"]+ \d+w/);
+      expect(picture).toMatch(/<source type="image\/webp" srcSet="[^"]+ \d+w, [^"]+ \d+w/);
+      expect(picture).toMatch(/<img [^>]*width="\d+" height="\d+"/);
+      expect(picture).toContain("background-image:url(data:image/webp;base64,");
+    }
+  });
+
+  it("never offers a phone a project screenshot wider than 800px", () => {
+    const phoneSources = html.match(/<source media="\(max-width: 719px\)"[^>]*>/g) ?? [];
+    expect(phoneSources.length).toBe(projects.filter((p) => p.image).length * 2);
+    for (const tag of phoneSources) {
+      const widths = [...tag.matchAll(/ (\d+)w/g)].map((m) => Number(m[1]));
+      expect(widths.length).toBeGreaterThan(0);
+      expect(Math.max(...widths)).toBeLessThanOrEqual(800);
+    }
+  });
+
+  it("loads the avatar first, the lead screenshot eagerly and the rest lazily", () => {
+    const imgs = (html.match(/<img [^>]*>/g) ?? []).filter((tag) => tag.includes("picture__img"));
+    const [avatar, lead, ...rest] = imgs;
+    expect(avatar).toContain('fetchPriority="high"');
+    expect(avatar).toContain('loading="eager"');
+    expect(lead).toContain('loading="eager"');
+    expect(rest.length).toBeGreaterThan(0);
+    for (const tag of rest) {
+      expect(tag).toContain('loading="lazy"');
+    }
+  });
+
   it("links GitHub, LinkedIn and email", () => {
     expect(html).toContain(`href="${links.github}"`);
     expect(html).toContain(`href="${links.linkedin}"`);
