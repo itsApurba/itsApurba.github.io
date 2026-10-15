@@ -16,7 +16,7 @@ Everything the page says is in `src/data/`:
 - `work.js`: the "Recent work" entries.
 - `skills.js`: the skill groups.
 
-A link or screenshot set to `null` is a placeholder. The dev server and pull request
+A link, screenshot or company set to `null` is a placeholder. The dev server and pull request
 builds show it as a dashed "To add: ..." badge; the published site (the push to `main`)
 leaves it out until it is filled in. Project screenshots live in
 `src/assets/projects/` (1280x800 WebP works well).
