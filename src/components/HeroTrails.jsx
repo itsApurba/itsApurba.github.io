@@ -44,6 +44,8 @@ const run = (canvas, hero) => {
     canvas.width = Math.round(width * ratio);
     canvas.height = Math.round(height * ratio);
     ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    cancelAnimationFrame(frame);
+    frame = 0;
     if (trails) tick();
   };
 
