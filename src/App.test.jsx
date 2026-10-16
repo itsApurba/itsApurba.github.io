@@ -14,6 +14,11 @@ describe("portfolio page", () => {
     }
   });
 
+  it("puts the pointer trails behind the hero as decoration", () => {
+    const hero = html.slice(html.indexOf('class="hero"'), html.indexOf('id="hero-title"'));
+    expect(hero).toContain('<canvas class="hero__trails" aria-hidden="true">');
+  });
+
   it("shows projects with a live site first, in the owner's order", () => {
     const order = projects.map((p) => p.id);
     expect(order).toEqual(["barreplay", "sharewise", "taskflow", "toofaani"]);

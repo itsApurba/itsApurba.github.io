@@ -1,10 +1,12 @@
 import { links, profile } from "../data/site";
+import HeroTrails from "./HeroTrails";
 import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, PinIcon, XIcon } from "./Icons";
 import Picture from "./Picture";
 import Todo from "./Todo";
 
 const Hero = () => (
   <section className="hero" aria-labelledby="hero-title">
+    <HeroTrails />
     <Picture
       image={profile.avatar}
       alt=""
