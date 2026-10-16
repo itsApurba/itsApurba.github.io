@@ -1,0 +1,41 @@
+# Builds the site on every pull request and push. A push to main also
+# publishes the build to the gh-pages branch, which GitHub Pages serves at
+# https://itsapurba.github.io/.
+name: Build and deploy
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+        env:
+          VITE_SHOW_PLACEHOLDERS: ${{ github.event_name == 'pull_request' }}
+
+      - name: Publish to gh-pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages

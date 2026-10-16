@@ -1,57 +1,27 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
-  "homepage": "https://itsApurba.github.io/",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@chakra-ui/react": "^2.3.5",
-    "@emailjs/browser": "^3.7.0",
-    "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "formik": "^2.2.9",
-    "framer-motion": "^6.5.1",
-    "react": "^18.2.0",
-    "react-animated-cursor": "^2.5.2",
-    "react-dom": "^18.2.0",
-    "react-github-calendar": "^3.4.0",
-    "react-icons": "^4.6.0",
-    "react-scripts": "5.0.1",
-    "react-slick": "^0.29.0",
-    "react-tooltip": "^4.4.3",
-    "slick-carousel": "^1.8.1",
-    "swiper": "^8.4.4",
-    "web-vitals": "^2.1.4"
+  "type": "module",
+  "description": "Apurba Adhikary's portfolio, served by GitHub Pages at https://itsapurba.github.io/",
+  "engines": {
+    "node": ">=22.12"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "images": "node scripts/images.mjs"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "@vitejs/plugin-react": "^6.1.2",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.3"
   }
 }
