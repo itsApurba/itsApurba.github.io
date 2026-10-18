@@ -51,10 +51,11 @@ it("closes on outside pointer interaction, focus departure, and breakpoint chang
   await act(async () => button().blur());
   expect(expanded()).toBe("false");
   await click(button());
+  button().focus();
   media.matches = true;
   await act(async () => change());
   expect(expanded()).toBe("false");
-  expect(document.body.style.overflow).toBe("");
+  expect(document.activeElement).toBe(host.querySelector("nav a"));
 });
 
 it("closes on link selection and focuses its destination without suppressing navigation", async () => {

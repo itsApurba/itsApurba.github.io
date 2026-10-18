@@ -199,20 +199,20 @@ ol {
 
 @media (max-width: 719px) {
   /* Without JavaScript the links remain visible and wrap instead of overflowing. */
-  .header:not(.header--interactive) nav {
+  :root:not(.js) .header nav {
     order: 3;
     width: 100%;
   }
 
-  .header:not(.header--interactive) .icon-button {
+  :root:not(.js) .header .icon-button {
     margin-left: auto;
   }
 
-  .header--interactive .header__toggle {
+  .js .header__toggle {
     display: inline-flex;
   }
 
-  .header--interactive .header__sections {
+  .js .header__sections {
     display: none;
     position: absolute;
     top: calc(100% + 8px);
@@ -227,15 +227,15 @@ ol {
     box-shadow: var(--shadow);
   }
 
-  .header--interactive .header__sections--open {
+  .js .header__sections--open {
     display: block;
   }
 
-  .header--interactive .header__nav {
+  .js .header__nav {
     flex-direction: column;
   }
 
-  .header--interactive .header__nav a {
+  .js .header__nav a {
     min-height: 44px;
     padding: 10px 14px;
     border-radius: 10px;

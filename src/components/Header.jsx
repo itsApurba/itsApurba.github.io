@@ -23,12 +23,10 @@ const toggleTheme = () => {
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [ready, setReady] = useState(false);
   const header = useRef(null);
   const trigger = useRef(null);
 
   useEffect(() => {
-    setReady(true);
     const closeOutside = (event) => {
       if (!header.current.contains(event.target)) setOpen(false);
     };
@@ -48,7 +46,7 @@ const Header = () => {
   }, []);
 
   return (
-  <header ref={header} className={`header${ready ? " header--interactive" : ""}`} onKeyDown={(event) => {
+  <header ref={header} className="header" onKeyDown={(event) => {
     if (event.key === "Escape" && open) {
       setOpen(false);
       trigger.current.focus();
