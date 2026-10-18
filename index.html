@@ -26,7 +26,8 @@
 
     <link rel="preconnect" href="https://avatars.githubusercontent.com" />
     <script>
-      // Apply the saved or system theme before first paint.
+      // Mark JavaScript as available and apply the saved or system theme before first paint.
+      document.documentElement.classList.add("js");
       (function () {
         var theme;
         try {
