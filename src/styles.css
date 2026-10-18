@@ -131,7 +131,7 @@ ol {
 /* Header */
 
 .header {
-  position: sticky;
+  position: relative;
   top: 0;
   z-index: 10;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -145,7 +145,8 @@ ol {
   align-items: center;
   gap: 8px;
   max-width: 1080px;
-  height: 56px;
+  min-height: 56px;
+  flex-wrap: wrap;
   margin: 0 auto;
   padding: 0 16px;
 }
@@ -166,6 +167,83 @@ ol {
 
 .header nav {
   margin-left: auto;
+}
+
+.header__toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header__toggle:hover,
+.header__toggle[aria-expanded="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.header__toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 719px) {
+  /* Without JavaScript the links remain visible and wrap instead of overflowing. */
+  .header:not(.header--interactive) nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .header:not(.header--interactive) .icon-button {
+    margin-left: auto;
+  }
+
+  .header--interactive .header__toggle {
+    display: inline-flex;
+  }
+
+  .header--interactive .header__sections {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    padding: 6px;
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+
+  .header--interactive .header__sections--open {
+    display: block;
+  }
+
+  .header--interactive .header__nav {
+    flex-direction: column;
+  }
+
+  .header--interactive .header__nav a {
+    min-height: 44px;
+    padding: 10px 14px;
+    border-radius: 10px;
+  }
+
+  .header__nav a:hover {
+    background: var(--accent-soft);
+  }
 }
 
 .header__nav {
@@ -689,6 +767,15 @@ ol {
 /* Wider screens */
 
 @media (min-width: 720px) {
+  .header {
+    position: sticky;
+  }
+
+  .header__inner {
+    height: 56px;
+    flex-wrap: nowrap;
+  }
+
   .header__nav a {
     padding: 10px 14px;
   }
