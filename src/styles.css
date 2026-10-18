@@ -45,7 +45,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -767,6 +766,10 @@ ol {
 /* Wider screens */
 
 @media (min-width: 720px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
   .header {
     position: sticky;
   }
