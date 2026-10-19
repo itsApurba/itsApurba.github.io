@@ -44,6 +44,7 @@
 }
 
 html {
+  scroll-padding-top: 72px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
@@ -130,7 +131,7 @@ ol {
 /* Header */
 
 .header {
-  position: relative;
+  position: sticky;
   top: 0;
   z-index: 10;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
@@ -205,6 +206,14 @@ ol {
 
   :root:not(.js) .header .icon-button {
     margin-left: auto;
+  }
+
+  :root:not(.js) {
+    scroll-padding-top: 152px;
+  }
+
+  :root:not(.js) .header__nav {
+    flex-wrap: wrap;
   }
 
   .js .header__toggle {
@@ -780,7 +789,7 @@ ol {
   }
 
   .header__nav a {
-    padding: 10px 14px;
+    padding: 10px 10px;
   }
 
   .hero {

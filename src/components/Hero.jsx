@@ -1,6 +1,6 @@
 import { links, profile } from "../data/site";
 import HeroTrails from "./HeroTrails";
-import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, PinIcon, XIcon } from "./Icons";
+import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, XIcon } from "./Icons";
 import Picture from "./Picture";
 import Todo from "./Todo";
 
@@ -15,18 +15,10 @@ const Hero = () => (
       loading="eager"
       fetchPriority="high"
     />
-    <p className="eyebrow">
-      {profile.role}
-      {profile.company ? ` at ${profile.company}` : <Todo>current company</Todo>}
-    </p>
     <h1 id="hero-title" className="hero__title">
       Hi, I'm {profile.name}.
     </h1>
     <p className="hero__intro">{profile.intro}</p>
-    <p className="hero__meta">
-      <PinIcon width={16} height={16} /> {profile.location}, from {profile.from}
-    </p>
-    <p className="hero__status">{profile.available}</p>
 
     <div className="hero__actions">
       <a className="button button--primary" href="#projects">
