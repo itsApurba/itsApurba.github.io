@@ -25,9 +25,14 @@ const Hero = () => (
         See my projects
       </a>
       {links.resume ? (
-        <a className="button" href={links.resume} target="_blank" download rel="noopener noreferrer">
-          <FileIcon /> Resume
-        </a>
+        <>
+          <a className="button" href={links.resume} target="_blank" download rel="noopener noreferrer" aria-label="Download resume">
+            <FileIcon /> Resume
+          </a>
+          <a className="button" href={links.resume} target="_blank" rel="noopener noreferrer">
+            Preview resume
+          </a>
+        </>
       ) : (
         <Todo>resume link</Todo>
       )}

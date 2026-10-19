@@ -41,10 +41,27 @@ describe("portfolio page", () => {
   it("has downloadable new-tab Resume links in the nav and Home", () => {
     const navAndHome = html.slice(0, html.indexOf('id="about"'));
     const resumeLinks = (navAndHome.match(/<a\b[^>]*>/g) ?? []).filter(tag => tag.includes('href="/resume.pdf"'));
-    expect(resumeLinks).toHaveLength(2);
-    for (const tag of resumeLinks) {
+    expect(resumeLinks).toHaveLength(3);
+    const downloads = resumeLinks.filter(tag => tag.includes('download=""'));
+    expect(downloads).toHaveLength(2);
+    for (const tag of downloads) {
       expect(tag).toContain('target="_blank"');
       expect(tag).toContain('download=""');
+    }
+  });
+
+  it("offers distinct Home download and new-tab preview actions for the same PDF", () => {
+    const home = html.slice(html.indexOf('id="home"'), html.indexOf('id="about"'));
+    const anchors = home.match(/<a\b[^>]*>[\s\S]*?<\/a>/g) ?? [];
+    const download = anchors.find(a => a.includes('aria-label="Download resume"'));
+    const preview = anchors.find(a => a.includes('>Preview resume</a>'));
+    expect(download).toContain('download=""');
+    expect(preview).toBeDefined();
+    expect(preview).not.toMatch(/\sdownload(?:=|\s|>)/);
+    for (const anchor of [download, preview]) {
+      expect(anchor).toContain('href="/resume.pdf"');
+      expect(anchor).toContain('target="_blank"');
+      expect(anchor).toContain('rel="noopener noreferrer"');
     }
   });
 
