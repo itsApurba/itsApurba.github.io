@@ -76,6 +76,17 @@ describe("portfolio page", () => {
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
   });
 
+  it("hides only the BarReplay chart-implementation bullet and retains its other highlights", () => {
+    const barreplay = projects.find((project) => project.id === "barreplay");
+    expect(barreplay.highlights).toEqual([
+      "Gold, silver, FX and indices from OANDA and Binance crypto, fetched on demand with nothing stored ahead",
+      "Accounts sync drawings, trades and replays across devices, and the app still works offline",
+    ]);
+    expect(html).not.toContain("Two chart views:");
+    expect(html).not.toContain("LuxAlgo");
+    for (const highlight of barreplay.highlights) expect(html).toContain(highlight);
+  });
+
   it("links each live site and lists its demo accounts with the password", () => {
     expect(projects).toHaveLength(4);
     for (const project of projects) {

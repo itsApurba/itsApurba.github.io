@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import { afterEach, expect, it, vi } from "vitest";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Contact from "./components/Contact";
 
 let root, host;
 afterEach(async () => {
@@ -13,7 +14,7 @@ afterEach(async () => {
 });
 
 for (const [name, Component, selector] of [
-  ["nav", Header, "nav"], ["Home", Hero, "#home"],
+  ["nav", Header, "nav"], ["Home", Hero, "#home"], ["Contact", Contact, "#contact"],
 ]) {
   it(`${name} Resume attempts one preview and one download within the click`, async () => {
     globalThis.IS_REACT_ACT_ENVIRONMENT = true;

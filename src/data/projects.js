@@ -19,7 +19,6 @@ export const projects = [
       "A free bar replay for practising on historical market data. The replay hides the future while you play, pause and step through candles at any speed and timeframe, draw with TradingView-style tools (Fibonacci, channels, volume profile, anchored VWAP, long/short positions) and place practice trades with stop-loss, take-profit and running P&L. Outside a replay the chart is live.",
     highlights: [
       "Gold, silver, FX and indices from OANDA and Binance crypto, fetched on demand with nothing stored ahead",
-      "Two chart views: TradingView's Lightweight Charts and LuxAlgo's Vela, with a custom replay strip",
       "Accounts sync drawings, trades and replays across devices, and the app still works offline",
     ],
     stack: ["TypeScript", "Vite", "Lightweight Charts", "Node.js", "Better Auth", "SQLite / Turso", "Kysely"],
