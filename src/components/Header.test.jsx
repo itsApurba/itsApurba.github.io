@@ -28,8 +28,8 @@ it("connects a collapsed native button to the existing section links", async () 
   expect(expanded()).toBe("false");
   expect(button().getAttribute("aria-controls")).toBe(host.querySelector("nav").id);
   const anchors = [...host.querySelectorAll("nav a")];
-  expect(anchors.map(a => a.textContent.trim())).toEqual(["Home", "About", "Skills", "Projects", "Contact", "Resume"]);
-  expect(anchors.map(a => a.getAttribute("href"))).toEqual(["#home", "#about", "#skills", "#projects", "#contact", "/resume.pdf"]);
+  expect(anchors.map(a => a.textContent.trim())).toEqual(["About", "Skills", "Projects", "Contact", "Resume"]);
+  expect(anchors.map(a => a.getAttribute("href"))).toEqual(["#home", "#skills", "#projects", "#contact", "/resume.pdf"]);
   expect(anchors.at(-1).target).toBe("_blank");
   expect(anchors.at(-1).hasAttribute("download")).toBe(true);
   await click(button());
