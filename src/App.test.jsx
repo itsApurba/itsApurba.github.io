@@ -1,22 +1,31 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { projects } from "./data/projects";
 import { links } from "./data/site";
-import { work } from "./data/work";
+import { career, education } from "./data/about";
 import { render } from "./entry-server";
 
 const html = render();
 
 describe("portfolio page", () => {
-  it("has Home, About, Skills, Projects and Contact in checklist order", () => {
+  it("orders the page Home, About, Projects, Skills, Contact independently of the nav", () => {
     expect(html).toContain("Apurba Adhikary");
-    const order = ["home", "about", "skills", "projects", "contact"];
+    const order = ["home", "about", "projects", "skills", "contact"];
     const positions = order.map((id) => html.indexOf(`id="${id}"`));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
-    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="skills"'));
-    expect(about).toContain('id="work"');
+    const nav = html.match(/<nav\b[\s\S]*?<\/nav>/)[0];
+    expect([...nav.matchAll(/<a\b[^>]*>(.*?)<\/a>/g)].map((match) => match[1]))
+      .toEqual(["Home", "About", "Skills", "Projects", "Contact", "Resume"]);
+  });
+
+  it("preserves About education and the complete Career path", () => {
+    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="projects"'));
+    for (const value of Object.values(education)) expect(about).toContain(value);
     expect(about).toContain("Career path");
-    expect(about).toContain("360ithub Pvt. Ltd.");
+    for (const item of career) {
+      expect(about).toContain(`id="career-${item.id}"`);
+      for (const key of ["company", "role", "dates", "summary"]) expect(about).toContain(item[key]);
+    }
   });
 
   it("has downloadable new-tab Resume links in the nav and Home", () => {
@@ -127,10 +136,13 @@ describe("portfolio page", () => {
     expect(html).not.toContain("utm_");
   });
 
-  it("lists every recent work item", () => {
-    for (const item of work) {
-      expect(html).toContain(`id="work-${item.id}"`);
-    }
+  it("removes Recent work and Digital Info Link without removing BarReplay", () => {
+    expect(html).not.toContain("Recent work");
+    expect(html).not.toContain("Digital Info Link");
+    expect(html).not.toContain('id="work"');
+    expect(html).not.toContain('id="work-');
+    expect(html).toContain('id="project-barreplay"');
+    expect(html).toContain('href="https://barreplay.digitalinfolink.in"');
   });
 
   it("marks a missing link as a placeholder in the dev server instead of rendering an empty link", () => {

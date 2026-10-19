@@ -14,8 +14,8 @@ const App = () => (
     <main id="main" className="page">
       <Hero />
       <About />
-      <Skills />
       <Projects />
+      <Skills />
       <Contact />
     </main>
   </>

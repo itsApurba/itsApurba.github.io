@@ -1,5 +1,4 @@
 import { career, education } from "../data/about";
-import Work from "./Work";
 
 const About = () => (
   <section id="about" className="section" aria-labelledby="about-title">
@@ -21,7 +20,6 @@ const About = () => (
         </li>
       ))}
     </ol>
-    <Work />
   </section>
 );
 
