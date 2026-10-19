@@ -28,16 +28,18 @@ const resolve = (selector, property, width) => {
   return value;
 };
 
-it("keeps the header sticky on desktop and lets it scroll away on mobile", () => {
+it("keeps the header sticky on desktop and narrow phones", () => {
   expect(resolve(".header", "position", 1280)).toBe("sticky");
   expect(resolve(".header", "position", 720)).toBe("sticky");
-  expect(resolve(".header", "position", 719)).toBe("relative");
-  expect(resolve(".header", "position", 375)).toBe("relative");
+  expect(resolve(".header", "position", 719)).toBe("sticky");
+  expect(resolve(".header", "position", 320)).toBe("sticky");
 });
 
-it("offsets anchor scrolling only where the header sticks", () => {
+it("offsets anchor scrolling on phones and desktop", () => {
   expect(resolve("html", "scroll-padding-top", 1280)).toBe("72px");
   expect(resolve("html", "scroll-padding-top", 720)).toBe("72px");
-  expect(resolve("html", "scroll-padding-top", 719)).toBeUndefined();
-  expect(resolve("html", "scroll-padding-top", 375)).toBeUndefined();
+  expect(resolve("html", "scroll-padding-top", 719)).toBe("72px");
+  expect(resolve("html", "scroll-padding-top", 320)).toBe("72px");
+  expect(resolve(":root:not(.js)", "scroll-padding-top", 320)).toBe("152px");
+  expect(resolve(":root:not(.js) .header__nav", "flex-wrap", 320)).toBe("wrap");
 });

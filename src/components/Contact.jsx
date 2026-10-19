@@ -1,4 +1,5 @@
 import { links, profile } from "../data/site";
+import { openResume } from "../resume";
 import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, XIcon } from "./Icons";
 import Todo, { showPlaceholders } from "./Todo";
 
@@ -30,7 +31,7 @@ const Contact = () => (
       {(links.resume || showPlaceholders()) && (
         <li>
           {links.resume ? (
-            <a className="button" href={links.resume} target="_blank" rel="noopener noreferrer">
+            <a className="button" href={links.resume} target="_blank" download rel="noopener noreferrer" onClick={openResume}>
               <FileIcon /> Resume
             </a>
           ) : (

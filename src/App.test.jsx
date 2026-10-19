@@ -1,4 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { projects } from "./data/projects";
 import { links } from "./data/site";
 import { render } from "./entry-server";
@@ -6,32 +8,52 @@ import { render } from "./entry-server";
 const html = render();
 
 describe("portfolio page", () => {
-  it("orders the page hero, Projects, Skills, Contact independently of the nav", () => {
+  it("preserves the supplied downloadable PDF byte contract", () => {
+    const pdf = readFileSync(new URL("../public/resume.pdf", import.meta.url));
+    expect(createHash("sha256").update(pdf).digest("hex"))
+      .toBe("4d9ce5479796563cd33de98d593a322a8aad127eeb6a04eebc18d8a25028f66e");
+  });
+  it("orders the page Home, About, Skills, Projects, Contact to match the nav", () => {
     expect(html).toContain("Apurba Adhikary");
-    const order = ["home", "projects", "skills", "contact"];
+    const order = ["home", "about", "skills", "projects", "contact"];
     const positions = order.map((id) => html.indexOf(`id="${id}"`));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
     const nav = html.match(/<nav\b[\s\S]*?<\/nav>/)[0];
     expect([...nav.matchAll(/<a\b[^>]*>(.*?)<\/a>/g)].map((match) => match[1]))
-      .toEqual(["About", "Skills", "Projects", "Contact", "Resume"]);
+      .toEqual(["Home", "About", "Skills", "Projects", "Contact", "Resume"]);
   });
 
-  it("removes the separate About education and Career path", () => {
-    for (const text of ['id="about"', 'href="#about"', "Career path", "360ithub", "MerlinAi.co", "Zarektronix", "Masai School", "Full Stack Web Development"]) {
+  it("keeps the short professional About separate from a brief full-stack Home", () => {
+    const home = html.slice(html.indexOf('id="home"'), html.indexOf('id="about"'));
+    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="skills"'));
+    expect(home).toContain("Apurba Adhikary");
+    expect(home).toContain("full-stack developer");
+    expect(home).not.toContain("Masai School");
+    expect(home).not.toContain("current company");
+    expect(about).toContain("I’m Apurba Adhikary, a developer with experience building web applications, Flutter apps, and business-system integrations. I have worked across frontend, backend, and mobile development. I enjoy solving practical problems and collaborating with teams to build useful products.");
+    for (const text of ["Masai School", "Career path", "360ithub", "MerlinAi.co", "Zarektronix"]) {
       expect(html).not.toContain(text);
     }
-    expect(html).toContain('href="#home">About</a>');
+    expect(html).toContain('href="#about">About</a>');
   });
 
   it("has downloadable new-tab Resume links in the nav and Home", () => {
-    const navAndHome = html.slice(0, html.indexOf('id="projects"'));
+    const navAndHome = html.slice(0, html.indexOf('id="about"'));
     const resumeLinks = (navAndHome.match(/<a\b[^>]*>/g) ?? []).filter(tag => tag.includes('href="/resume.pdf"'));
     expect(resumeLinks).toHaveLength(2);
-    for (const tag of resumeLinks) {
+    const downloads = resumeLinks.filter(tag => tag.includes('download=""'));
+    expect(downloads).toHaveLength(2);
+    for (const tag of downloads) {
       expect(tag).toContain('target="_blank"');
       expect(tag).toContain('download=""');
     }
+  });
+
+  it("keeps one Home Resume control instead of a separate preview button", () => {
+    const home = html.slice(html.indexOf('id="home"'), html.indexOf('id="about"'));
+    expect(home.match(/href="\/resume.pdf"/g)).toHaveLength(1);
+    expect(html).not.toContain("Preview resume");
   });
 
   it("lists the resume-backed soft skills alongside technical skills", () => {
@@ -54,9 +76,24 @@ describe("portfolio page", () => {
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
   });
 
+  it("hides only the BarReplay chart-implementation bullet and retains its other highlights", () => {
+    const barreplay = projects.find((project) => project.id === "barreplay");
+    expect(barreplay.highlights).toEqual([
+      "Gold, silver, FX and indices from OANDA and Binance crypto, fetched on demand with nothing stored ahead",
+      "Accounts sync drawings, trades and replays across devices, and the app still works offline",
+    ]);
+    expect(html).not.toContain("Two chart views:");
+    expect(html).not.toContain("LuxAlgo");
+    for (const highlight of barreplay.highlights) expect(html).toContain(highlight);
+  });
+
   it("links each live site and lists its demo accounts with the password", () => {
-    for (const project of projects.filter((p) => p.live)) {
-      expect(html).toContain(`href="${project.live}"`);
+    expect(projects).toHaveLength(4);
+    for (const project of projects) {
+      const tag = html.match(new RegExp(`<a[^>]*href="${project.live.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>`))?.[0];
+      expect(tag).toBeDefined();
+      expect(tag).toContain('target="_blank"');
+      expect(tag).toContain('rel="noopener noreferrer"');
     }
     for (const project of projects.filter((p) => p.demo)) {
       expect(html).toContain(project.demo.password);

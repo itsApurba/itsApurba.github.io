@@ -16,7 +16,9 @@ export const profile = {
   available: "Available for new work",
   avatar: images.avatar,
   intro:
-    "I build mobile apps, ERPNext and Frappe systems, and voice AI agents. Most of my work is in Flutter, with React, Node.js and MongoDB on the web.",
+    "I’m a full-stack developer building useful web and mobile applications.",
+  about:
+    "I’m Apurba Adhikary, a developer with experience building web applications, Flutter apps, and business-system integrations. I have worked across frontend, backend, and mobile development. I enjoy solving practical problems and collaborating with teams to build useful products.",
 };
 
 export const links = {
