@@ -5,7 +5,7 @@ import Picture from "./Picture";
 import Todo from "./Todo";
 
 const Hero = () => (
-  <section className="hero" aria-labelledby="hero-title">
+  <section id="home" className="hero" aria-labelledby="hero-title">
     <HeroTrails />
     <Picture
       image={profile.avatar}
@@ -33,7 +33,7 @@ const Hero = () => (
         See my projects
       </a>
       {links.resume ? (
-        <a className="button" href={links.resume} target="_blank" rel="noopener noreferrer">
+        <a className="button" href={links.resume} target="_blank" download rel="noopener noreferrer">
           <FileIcon /> Resume
         </a>
       ) : (

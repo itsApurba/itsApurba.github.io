@@ -82,25 +82,20 @@ export const projects = [
     imageAlt: "TaskFlow task market with three claimable tasks and their credit rewards",
   },
   {
-    id: "toofaani",
-    name: "Toofaani",
-    eyebrow: "In progress",
-    tagline: "Media platform with Shorts and live audio rooms",
+    id: "timecamp",
+    name: "TimeCamp clone",
+    eyebrow: "Team project",
+    tagline: "A time-tracking website clone",
     summary:
-      "A media and interactive audio platform built around two experiences: short portrait Shorts and live Audio Rooms. Uploads are transcoded in the background into adaptive HLS streams, and the player prefetches segments so playback starts without buffering.",
+      "A five-person team project recreating TimeCamp's landing, features and pricing pages, with sign-up, login and a task dashboard. I contributed as a member of the team.",
     highlights: [
-      "Background transcoding with FFmpeg on a BullMQ queue into a 480p and 720p HLS ladder",
-      "Access control that keeps roles and permissions separate from levels, quotas and badges",
-      "pnpm monorepo with a shared, typed Zod contract between the Hono API and the Astro web app",
+      "A dashboard for adding and deleting tasks and recording time, as documented in the project README",
+      "Built collaboratively by five contributors, including Apurba Adhikary",
     ],
-    stack: ["TypeScript", "Astro", "React", "Tailwind CSS", "hls.js", "Hono", "PostgreSQL", "Drizzle ORM", "Redis / BullMQ", "Better Auth"],
-    // PLACEHOLDER: no public deployment yet.
-    live: null,
-    // PLACEHOLDER: the repository is private.
-    source: null,
-    sourceNote: "Private repository",
-    // PLACEHOLDER: no screenshot yet.
-    image: null,
-    imageAlt: "",
+    stack: ["React", "Redux", "Chakra UI", "Bootstrap", "JavaScript", "CSS", "Firebase"],
+    live: "https://timecamp-jet.vercel.app/",
+    source: "https://github.com/itsApurba/TimeCamp",
+    image: images.timecamp,
+    imageAlt: "TimeCamp clone landing page with time-tracking signup and a customer testimonial",
   },
 ];

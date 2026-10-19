@@ -2,18 +2,18 @@ import { work } from "../data/work";
 import { ExternalIcon } from "./Icons";
 
 const Work = () => (
-  <section id="work" className="section" aria-labelledby="work-title">
-    <h2 id="work-title" className="section__title">
+  <div id="work" aria-labelledby="work-title">
+    <h3 id="work-title" className="section__subtitle">
       Recent work
-    </h2>
+    </h3>
     <ol className="work">
       {work.map((item) => (
         <li key={item.id} className="work__item">
           <article aria-labelledby={`work-${item.id}`}>
             <p className="work__status">{item.status}</p>
-            <h3 id={`work-${item.id}`} className="work__title">
+            <h4 id={`work-${item.id}`} className="work__title">
               {item.name}
-            </h3>
+            </h4>
             <p>{item.summary}</p>
             <ul className="chips" aria-label={`${item.name} tech stack`}>
               {item.stack.map((tech) => (
@@ -31,7 +31,7 @@ const Work = () => (
         </li>
       ))}
     </ol>
-  </section>
+  </div>
 );
 
 export default Work;

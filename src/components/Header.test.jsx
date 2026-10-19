@@ -27,7 +27,11 @@ it("connects a collapsed native button to the existing section links", async () 
   expect(button().type).toBe("button");
   expect(expanded()).toBe("false");
   expect(button().getAttribute("aria-controls")).toBe(host.querySelector("nav").id);
-  expect([...host.querySelectorAll("nav a")].map(a => a.hash)).toEqual(["#projects", "#work", "#skills", "#contact"]);
+  const anchors = [...host.querySelectorAll("nav a")];
+  expect(anchors.map(a => a.textContent.trim())).toEqual(["Home", "About", "Skills", "Projects", "Contact", "Resume"]);
+  expect(anchors.map(a => a.getAttribute("href"))).toEqual(["#home", "#about", "#skills", "#projects", "#contact", "/resume.pdf"]);
+  expect(anchors.at(-1).target).toBe("_blank");
+  expect(anchors.at(-1).hasAttribute("download")).toBe(true);
   await click(button());
   expect(expanded()).toBe("true");
   await click(button());
@@ -60,11 +64,25 @@ it("closes on outside pointer interaction, focus departure, and breakpoint chang
 
 it("closes on link selection and focuses its destination without suppressing navigation", async () => {
   const section = document.createElement("section");
-  section.id = "projects";
+  section.id = "home";
   document.body.append(section);
   await click(button());
   await click(host.querySelector("nav a"));
   expect(expanded()).toBe("false");
   expect(document.activeElement).toBe(section);
   section.remove();
+});
+
+it("closes on Resume without treating its PDF path as a section selector", async () => {
+  await click(button());
+  const resume = host.querySelector('nav a[href="/resume.pdf"]');
+  // Assert that download navigation remains enabled without making jsdom navigate.
+  let defaultPrevented;
+  resume.addEventListener("click", (event) => {
+    defaultPrevented = event.defaultPrevented;
+    event.preventDefault();
+  });
+  await click(resume);
+  expect(expanded()).toBe("false");
+  expect(defaultPrevented).toBe(false);
 });

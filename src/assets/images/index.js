@@ -23,6 +23,12 @@ import taskflow_avif_800 from "./taskflow-800.avif";
 import taskflow_webp_800 from "./taskflow-800.webp";
 import taskflow_avif_1280 from "./taskflow-1280.avif";
 import taskflow_webp_1280 from "./taskflow-1280.webp";
+import timecamp_avif_480 from "./timecamp-480.avif";
+import timecamp_webp_480 from "./timecamp-480.webp";
+import timecamp_avif_800 from "./timecamp-800.avif";
+import timecamp_webp_800 from "./timecamp-800.webp";
+import timecamp_avif_1280 from "./timecamp-1280.avif";
+import timecamp_webp_1280 from "./timecamp-1280.webp";
 
 export const images = {
   "avatar": {
@@ -56,5 +62,13 @@ export const images = {
     webp: [[480, taskflow_webp_480], [800, taskflow_webp_800], [1280, taskflow_webp_1280]],
     src: taskflow_webp_1280,
     placeholder: "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAABQAQCdASoQAAoAA4BaJZwABDOAAP7zlQKtYxRywb7QQ0Q7ug/1HAAA",
+  },
+  "timecamp": {
+    width: 1280,
+    height: 800,
+    avif: [[480, timecamp_avif_480], [800, timecamp_avif_800], [1280, timecamp_avif_1280]],
+    webp: [[480, timecamp_webp_480], [800, timecamp_webp_800], [1280, timecamp_webp_1280]],
+    src: timecamp_webp_1280,
+    placeholder: "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADwAQCdASoQAAoAA4BaJYwC7ADhaSku6/AA/vPu2A4G3XVxX1xUZgxw0XI9sycY9/pbqPt5rPvsm8+cwqyLgpsaGeph71JfwXXbB+PGBRVNB/7QNpfwHYnVo3TF9P3v9kAAAA==",
   },
 };
