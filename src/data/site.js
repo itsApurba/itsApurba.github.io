@@ -24,7 +24,5 @@ export const links = {
   linkedin: "https://www.linkedin.com/in/itsapurbaa",
   x: "https://x.com/twitApurba",
   email: "its.apurba@outlook.com",
-  // PLACEHOLDER: link to the current resume (PDF or Google Drive "anyone with
-  // the link" URL).
-  resume: null,
+  resume: "/resume.pdf",
 };

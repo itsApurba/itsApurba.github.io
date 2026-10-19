@@ -7,11 +7,33 @@ import { render } from "./entry-server";
 const html = render();
 
 describe("portfolio page", () => {
-  it("has the hero, projects, skills and contact sections", () => {
+  it("has Home, About, Skills, Projects and Contact in checklist order", () => {
     expect(html).toContain("Apurba Adhikary");
-    for (const id of ["projects", "work", "skills", "contact"]) {
-      expect(html).toContain(`id="${id}"`);
+    const order = ["home", "about", "skills", "projects", "contact"];
+    const positions = order.map((id) => html.indexOf(`id="${id}"`));
+    expect(positions.every((position) => position >= 0)).toBe(true);
+    expect(positions).toEqual([...positions].sort((a, b) => a - b));
+    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="skills"'));
+    expect(about).toContain('id="work"');
+    expect(about).toContain("Career path");
+    expect(about).toContain("360ithub Pvt. Ltd.");
+  });
+
+  it("has downloadable new-tab Resume links in the nav and Home", () => {
+    const navAndHome = html.slice(0, html.indexOf('id="about"'));
+    const resumeLinks = (navAndHome.match(/<a\b[^>]*>/g) ?? []).filter(tag => tag.includes('href="/resume.pdf"'));
+    expect(resumeLinks).toHaveLength(2);
+    for (const tag of resumeLinks) {
+      expect(tag).toContain('target="_blank"');
+      expect(tag).toContain('download=""');
     }
+  });
+
+  it("lists the resume-backed soft skills alongside technical skills", () => {
+    for (const skill of ["Collaboration", "Problem-Solving", "Mentoring", "Adaptability", "React", "Flutter"]) {
+      expect(html).toContain(skill);
+    }
+    expect(html).toContain("Soft skills");
   });
 
   it("puts the pointer trails behind the hero as decoration", () => {
@@ -21,9 +43,8 @@ describe("portfolio page", () => {
 
   it("shows projects with a live site first, in the owner's order", () => {
     const order = projects.map((p) => p.id);
-    expect(order).toEqual(["barreplay", "sharewise", "taskflow", "toofaani"]);
-    const firstWithoutLive = projects.findIndex((p) => !p.live);
-    expect(projects.slice(firstWithoutLive).every((p) => !p.live)).toBe(true);
+    expect(order).toEqual(["barreplay", "sharewise", "taskflow", "timecamp"]);
+    expect(projects.every((p) => Boolean(p.live))).toBe(true);
     const positions = order.map((id) => html.indexOf(`id="project-${id}"`));
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
   });

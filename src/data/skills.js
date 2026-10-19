@@ -1,6 +1,11 @@
 // Grouped from the owner's own pages, the GitHub profile and the stacks of the
-// projects and work on this site. Basics such as HTML and CSS are left out on purpose.
+// projects and work on this site. Soft skills are listed in the supplied resume.
+// Basics such as HTML and CSS are left out on purpose.
 export const skills = [
+  {
+    group: "Soft skills",
+    items: ["Collaboration", "Problem-Solving", "Mentoring", "Adaptability"],
+  },
   {
     group: "AI and agents",
     items: ["Voice agents", "Realtime voice (LiveKit)"],

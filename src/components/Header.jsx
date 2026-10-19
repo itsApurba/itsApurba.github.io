@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { MoonIcon, SunIcon } from "./Icons";
+import { links } from "../data/site";
 
 const nav = [
-  { href: "#projects", label: "Projects" },
-  { href: "#work", label: "Work" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -55,7 +57,7 @@ const Header = () => {
     if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false);
   }}>
     <div className="header__inner">
-      <a className="header__mark" href="#top" aria-label="Apurba Adhikary, back to top">
+      <a className="header__mark" href="#home" aria-label="Apurba Adhikary, back to top">
         AA
       </a>
       <button ref={trigger} type="button" className="header__toggle" aria-expanded={open}
@@ -78,6 +80,11 @@ const Header = () => {
               }}>{item.label}</a>
             </li>
           ))}
+          <li>
+            <a href={links.resume} target="_blank" download rel="noopener noreferrer" onClick={() => setOpen(false)}>
+              Resume
+            </a>
+          </li>
         </ul>
       </nav>
       <button type="button" className="icon-button" onClick={toggleTheme} aria-label="Switch between light and dark theme">
