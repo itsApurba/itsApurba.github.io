@@ -18,7 +18,7 @@ export const profile = {
   intro:
     "I’m a full-stack developer building useful web and mobile applications.",
   about:
-    "I’m Apurba Adhikary, a developer with experience building web applications, Flutter apps, and business-system integrations. I trained in Full Stack Web Development at Masai School and have worked across frontend, backend, and mobile development. I enjoy solving practical problems and collaborating with teams to build useful products.",
+    "I’m Apurba Adhikary, a developer with experience building web applications, Flutter apps, and business-system integrations. I have worked across frontend, backend, and mobile development. I enjoy solving practical problems and collaborating with teams to build useful products.",
 };
 
 export const links = {

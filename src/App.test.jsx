@@ -31,8 +31,8 @@ describe("portfolio page", () => {
     expect(home).toContain("full-stack developer");
     expect(home).not.toContain("Masai School");
     expect(home).not.toContain("current company");
-    expect(about).toContain("I’m Apurba Adhikary, a developer with experience building web applications, Flutter apps, and business-system integrations. I trained in Full Stack Web Development at Masai School and have worked across frontend, backend, and mobile development. I enjoy solving practical problems and collaborating with teams to build useful products.");
-    for (const text of ["Career path", "360ithub", "MerlinAi.co", "Zarektronix"]) {
+    expect(about).toContain("I’m Apurba Adhikary, a developer with experience building web applications, Flutter apps, and business-system integrations. I have worked across frontend, backend, and mobile development. I enjoy solving practical problems and collaborating with teams to build useful products.");
+    for (const text of ["Masai School", "Career path", "360ithub", "MerlinAi.co", "Zarektronix"]) {
       expect(html).not.toContain(text);
     }
     expect(html).toContain('href="#about">About</a>');
