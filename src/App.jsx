@@ -17,8 +17,8 @@ const App = () => (
         <h2 id="about-title" className="section__title">About</h2>
         <p>{profile.about}</p>
       </section>
-      <Projects />
       <Skills />
+      <Projects />
       <Contact />
     </main>
   </>

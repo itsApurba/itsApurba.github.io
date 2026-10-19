@@ -13,9 +13,9 @@ describe("portfolio page", () => {
     expect(createHash("sha256").update(pdf).digest("hex"))
       .toBe("4d9ce5479796563cd33de98d593a322a8aad127eeb6a04eebc18d8a25028f66e");
   });
-  it("orders the page hero, Projects, Skills, Contact independently of the nav", () => {
+  it("orders the page Home, About, Skills, Projects, Contact to match the nav", () => {
     expect(html).toContain("Apurba Adhikary");
-    const order = ["home", "about", "projects", "skills", "contact"];
+    const order = ["home", "about", "skills", "projects", "contact"];
     const positions = order.map((id) => html.indexOf(`id="${id}"`));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
@@ -26,7 +26,7 @@ describe("portfolio page", () => {
 
   it("keeps the short professional About separate from a brief full-stack Home", () => {
     const home = html.slice(html.indexOf('id="home"'), html.indexOf('id="about"'));
-    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="projects"'));
+    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="skills"'));
     expect(home).toContain("Apurba Adhikary");
     expect(home).toContain("full-stack developer");
     expect(home).not.toContain("Masai School");
@@ -39,7 +39,7 @@ describe("portfolio page", () => {
   });
 
   it("has downloadable new-tab Resume links in the nav and Home", () => {
-    const navAndHome = html.slice(0, html.indexOf('id="projects"'));
+    const navAndHome = html.slice(0, html.indexOf('id="about"'));
     const resumeLinks = (navAndHome.match(/<a\b[^>]*>/g) ?? []).filter(tag => tag.includes('href="/resume.pdf"'));
     expect(resumeLinks).toHaveLength(2);
     for (const tag of resumeLinks) {
