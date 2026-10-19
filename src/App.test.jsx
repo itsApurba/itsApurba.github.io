@@ -1,35 +1,31 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { projects } from "./data/projects";
 import { links } from "./data/site";
-import { career, education } from "./data/about";
 import { render } from "./entry-server";
 
 const html = render();
 
 describe("portfolio page", () => {
-  it("orders the page Home, About, Projects, Skills, Contact independently of the nav", () => {
+  it("orders the page hero, Projects, Skills, Contact independently of the nav", () => {
     expect(html).toContain("Apurba Adhikary");
-    const order = ["home", "about", "projects", "skills", "contact"];
+    const order = ["home", "projects", "skills", "contact"];
     const positions = order.map((id) => html.indexOf(`id="${id}"`));
     expect(positions.every((position) => position >= 0)).toBe(true);
     expect(positions).toEqual([...positions].sort((a, b) => a - b));
     const nav = html.match(/<nav\b[\s\S]*?<\/nav>/)[0];
     expect([...nav.matchAll(/<a\b[^>]*>(.*?)<\/a>/g)].map((match) => match[1]))
-      .toEqual(["Home", "About", "Skills", "Projects", "Contact", "Resume"]);
+      .toEqual(["About", "Skills", "Projects", "Contact", "Resume"]);
   });
 
-  it("preserves About education and the complete Career path", () => {
-    const about = html.slice(html.indexOf('id="about"'), html.indexOf('id="projects"'));
-    for (const value of Object.values(education)) expect(about).toContain(value);
-    expect(about).toContain("Career path");
-    for (const item of career) {
-      expect(about).toContain(`id="career-${item.id}"`);
-      for (const key of ["company", "role", "dates", "summary"]) expect(about).toContain(item[key]);
+  it("removes the separate About education and Career path", () => {
+    for (const text of ['id="about"', 'href="#about"', "Career path", "360ithub", "MerlinAi.co", "Zarektronix", "Masai School", "Full Stack Web Development"]) {
+      expect(html).not.toContain(text);
     }
+    expect(html).toContain('href="#home">About</a>');
   });
 
   it("has downloadable new-tab Resume links in the nav and Home", () => {
-    const navAndHome = html.slice(0, html.indexOf('id="about"'));
+    const navAndHome = html.slice(0, html.indexOf('id="projects"'));
     const resumeLinks = (navAndHome.match(/<a\b[^>]*>/g) ?? []).filter(tag => tag.includes('href="/resume.pdf"'));
     expect(resumeLinks).toHaveLength(2);
     for (const tag of resumeLinks) {

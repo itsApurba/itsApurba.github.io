@@ -3,8 +3,7 @@ import { MoonIcon, SunIcon } from "./Icons";
 import { links } from "../data/site";
 
 const nav = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
+  { href: "#home", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#contact", label: "Contact" },
