@@ -1,5 +1,6 @@
 import { links, profile } from "../data/site";
 import HeroTrails from "./HeroTrails";
+import { openResume } from "../resume";
 import { FileIcon, GitHubIcon, LinkedInIcon, MailIcon, XIcon } from "./Icons";
 import Picture from "./Picture";
 import Todo from "./Todo";
@@ -25,14 +26,9 @@ const Hero = () => (
         See my projects
       </a>
       {links.resume ? (
-        <>
-          <a className="button" href={links.resume} target="_blank" download rel="noopener noreferrer" aria-label="Download resume">
-            <FileIcon /> Resume
-          </a>
-          <a className="button" href={links.resume} target="_blank" rel="noopener noreferrer">
-            Preview resume
-          </a>
-        </>
+        <a className="button" href={links.resume} target="_blank" download rel="noopener noreferrer" onClick={openResume}>
+          <FileIcon /> Resume
+        </a>
       ) : (
         <Todo>resume link</Todo>
       )}

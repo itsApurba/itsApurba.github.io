@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { MoonIcon, SunIcon } from "./Icons";
 import { links } from "../data/site";
+import { openResume } from "../resume";
 
 const nav = [
   { href: "#home", label: "Home" },
@@ -81,7 +82,7 @@ const Header = () => {
             </li>
           ))}
           <li>
-            <a href={links.resume} target="_blank" download rel="noopener noreferrer" onClick={() => setOpen(false)}>
+            <a href={links.resume} target="_blank" download rel="noopener noreferrer" onClick={(event) => { setOpen(false); openResume(event); }}>
               Resume
             </a>
           </li>

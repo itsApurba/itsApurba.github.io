@@ -74,15 +74,21 @@ it("closes on link selection and focuses its destination without suppressing nav
 });
 
 it("closes on Resume without treating its PDF path as a section selector", async () => {
+  vi.spyOn(window, "open").mockReturnValue(null);
+  vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(function () {
+    if (!this.hasAttribute("download") || this.closest("nav")) {
+      this.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true }));
+    }
+  });
   await click(button());
   const resume = host.querySelector('nav a[href="/resume.pdf"]');
-  // Assert that download navigation remains enabled without making jsdom navigate.
+  // The enhancement suppresses native navigation to avoid duplicate downloads.
   let defaultPrevented;
-  resume.addEventListener("click", (event) => {
+  document.addEventListener("click", (event) => {
     defaultPrevented = event.defaultPrevented;
     event.preventDefault();
-  });
+  }, { once: true });
   await click(resume);
   expect(expanded()).toBe("false");
-  expect(defaultPrevented).toBe(false);
+  expect(defaultPrevented).toBe(true);
 });
